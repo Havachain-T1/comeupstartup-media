@@ -9,7 +9,7 @@
             <label class="font-14 bold black">{{ translate('Select Ad') }} </label>
             <select name="ad_id" class="form-control page-builder-ad-selector">
                 @if ($ad_details != null)
-                    <option value="{{ $ad_details->title }}" selected>
+                    <option value="{{ $ad_details->id }}" selected>
                         {{ $ad_details->title . '-' . $ad_details->type . '-' . $ad_details->size }}
                     </option>
                 @endif
