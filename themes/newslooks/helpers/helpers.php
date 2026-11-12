@@ -138,14 +138,10 @@ if (!function_exists('getAllFonts')) {
     function getAllFonts()
     {
         $url = config('newslooks.google_font_api_key.url');
-        $json = @file_get_contents($url);
-        $json_data = $json ? json_decode($json, true) : null;
+        $json = file_get_contents($url);
+        $json_data = json_decode($json, true);
 
         $data = [];
-
-        if (!isset($json_data['items']) || !is_array($json_data['items'])) {
-            return $data;
-        }
 
         for ($i = 0; $i < sizeof($json_data['items']); $i++) {
             $item = $json_data['items'][$i];
