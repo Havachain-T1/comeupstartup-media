@@ -3,10 +3,13 @@
 namespace App\Providers;
 
 use Composer\Autoload\ClassLoader;
+use App\Providers\Concerns\QueriesCmsStateDuringBoot;
 use Illuminate\Support\ServiceProvider;
 
 class PluginServiceProvider extends ServiceProvider
 {
+    use QueriesCmsStateDuringBoot;
+
     /**
      * Register services.
      *
@@ -24,7 +27,7 @@ class PluginServiceProvider extends ServiceProvider
     public function boot()
     {
         if (env('IS_USER_REGISTERED')==1) {
-            $plugins = getActivePlugins();
+            $plugins = $this->queryCmsStateDuringBoot(fn () => getActivePlugins(), collect());
 
             foreach ($plugins as $plugin) {
                 //Merge config

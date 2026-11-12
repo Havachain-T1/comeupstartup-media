@@ -141,5 +141,5 @@ return [
         'Header Top Right Menu'
     ],
 
-    'open_ai_key' => env('OPEN_AI_KEY', 'smtp'), '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'
+    'open_ai_key' => env('OPEN_AI_KEY', 'smtp'),
 ];

@@ -1,3 +1,6 @@
+-- SANITISED DEVELOPMENT SEED - NOT PRODUCTION DATA.
+-- Vendor demo content (NewsLooks/ThemeLooks). Credentials and personal data were
+-- replaced by tools/sanitise-seed.py. Every seeded user's password is: password
 -- phpMyAdmin SQL Dump
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
@@ -229,7 +232,7 @@ CREATE TABLE `open_ai_settings` (
 --
 
 INSERT INTO `open_ai_settings` (`id`, `api_key`, `default_model`) VALUES
-(1, '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', 'text-davinci-003');
+(1, NULL, 'text-davinci-003');
 
 -- --------------------------------------------------------
 
@@ -639,9 +642,6 @@ CREATE TABLE `password_resets` (
 -- Dumping data for table `password_resets`
 --
 
-INSERT INTO `password_resets` (`email`, `token`, `created_at`) VALUES
-('rakib@developer.com', '3ea7G30OjBrbwMYEuG2zglfHcOKiIlqNcBUjv2npNd0y3G8FGSTy1i5Zh3W6pUGf', '2023-03-01 15:55:32'),
-('admin@example.com', '1hHyCxGgZgnoJafFS9iuASoEhC0U9xQGkJYpXibUYsSv7vMC6nwzOrDIP9coaP1v', '2023-03-01 20:19:23');
 
 -- --------------------------------------------------------
 
@@ -1265,36 +1265,36 @@ CREATE TABLE `tl_blog_comments` (
 --
 
 INSERT INTO `tl_blog_comments` (`id`, `blog_id`, `user_type`, `user_id`, `user_ip_address`, `user_name`, `user_email`, `user_website`, `comment`, `parent`, `status`, `previous_status`, `comment_date`, `created_at`, `updated_at`) VALUES
-(5, 169, 'admin', 1, '172.68.218.134', 'Wade Wilson', 'admin@example.com', 'https://oktasker.com', 'test', NULL, 1, NULL, '2023-03-01 11:16:59', '2023-03-01 16:16:59', '2023-03-01 16:16:59'),
-(6, 169, 'admin', 1, '172.68.218.133', 'Wade Wilson', 'admin@example.com', 'https://oktasker.com', 'test2', NULL, 1, NULL, '2023-03-01 11:24:37', '2023-03-01 16:24:37', '2023-03-01 16:24:37'),
-(7, 169, 'admin', 1, '172.68.218.137', 'Wade Wilson', 'admin@example.com', 'https://oktasker.com', 'test 3', NULL, 1, NULL, '2023-03-01 11:30:09', '2023-03-01 16:30:09', '2023-03-01 16:30:09'),
-(8, 169, 'admin', 1, '172.68.218.134', 'Wade Wilson', 'admin@example.com', 'https://oktasker.com', 'test 4', NULL, 1, NULL, '2023-03-01 11:32:22', '2023-03-01 16:32:22', '2023-03-01 16:32:22'),
-(9, 169, 'admin', 1, '172.68.218.137', 'Wade Wilson', 'admin@example.com', 'https://oktasker.com', 'test 5', NULL, 1, NULL, '2023-03-01 11:35:19', '2023-03-01 16:35:19', '2023-03-01 16:35:19'),
-(10, 169, 'admin', 1, '172.68.218.137', 'Wade Wilson', 'admin@example.com', 'https://oktasker.com', 'test 6', NULL, 1, NULL, '2023-03-01 11:37:05', '2023-03-01 16:37:05', '2023-03-01 16:37:05'),
-(11, 169, 'admin', 1, '172.68.218.135', 'Wade Wilson', 'admin@example.com', 'https://oktasker.com', 'test 7', NULL, 1, NULL, '2023-03-01 11:48:49', '2023-03-01 16:48:49', '2023-03-01 16:48:49'),
-(12, 169, 'admin', 1, '172.68.218.132', 'Wade Wilson', 'admin@example.com', 'https://oktasker.com', 'test8', NULL, 1, NULL, '2023-03-01 11:55:44', '2023-03-01 16:55:44', '2023-03-01 16:55:44'),
-(13, 169, 'admin', 1, '172.68.218.137', 'Wade Wilson', 'admin@example.com', 'https://oktasker.com', 'test9', NULL, 1, NULL, '2023-03-01 11:57:38', '2023-03-01 16:57:38', '2023-03-01 16:57:38'),
-(14, 169, 'admin', 1, '172.68.218.133', 'Wade Wilson', 'admin@example.com', 'https://oktasker.com', 'test 9', NULL, 1, NULL, '2023-03-01 12:03:11', '2023-03-01 17:03:11', '2023-03-01 17:03:11'),
-(15, 169, 'admin', 1, '172.68.218.134', 'Wade Wilson', 'admin@example.com', 'https://oktasker.com', 'test 10', NULL, 1, NULL, '2023-03-01 12:05:06', '2023-03-01 17:05:06', '2023-03-01 17:05:06'),
-(16, 169, 'admin', 1, '172.68.218.134', 'Wade Wilson', 'admin@example.com', 'https://oktasker.com', 'test 9', NULL, 1, NULL, '2023-03-01 12:21:49', '2023-03-01 17:21:49', '2023-03-01 17:21:49'),
-(54, 169, 'user', 8, '127.0.0.1', 'Habib', 'Habib', 'Habib', 'New Comments', NULL, 4, NULL, '2023-11-14 16:44:24', '2023-11-14 10:44:24', '2023-11-14 10:44:24'),
-(55, 169, 'user', 8, '127.0.0.1', 'Habib', 'Habib', 'Habib', 'Again Comment', NULL, 1, NULL, '2023-11-14 16:47:32', '2023-11-14 10:47:32', '2023-11-14 10:47:32'),
-(56, 169, 'anonymous', NULL, '127.0.0.1', 'Anonymous', '', '', 'New Comments From Anomoly', NULL, 1, NULL, '2023-11-14 17:45:07', '2023-11-14 11:45:07', '2023-11-14 11:45:07'),
-(57, 169, 'admin', 1, '127.0.0.1', 'Wade Wilson', 'Wade Wilson', 'Wade Wilson', 'Hello Email', NULL, 1, NULL, '2023-11-14 18:00:16', '2023-11-14 12:00:16', '2023-11-14 12:00:16'),
-(58, 158, 'user', 8, '127.0.0.1', 'Habib', 'Habib', 'Habib', 'Hello Comments', NULL, 3, NULL, '2023-11-15 10:46:56', '2023-11-15 04:46:56', '2023-11-15 04:46:56'),
-(59, 160, 'user', 8, '127.0.0.1', 'Habib', 'Habib', 'Habib', 'New Comments 2 \r\nFor a slightly more opinionated version of the video reviews above half of the Island worlds designed to power up everything', NULL, 1, NULL, '2023-11-15 10:47:21', '2023-11-15 04:47:21', '2023-11-15 04:47:21'),
-(60, 162, 'user', 8, '127.0.0.1', 'Habib', 'Habib', 'Habib', 'She travelling acceptance men unpleasant her especially to entreaties law. Law forth but end any arise chief arose. Old her say learn these large. Joy fond many in ham high seen this. Few preferred continual led incommode neglected. To discovered insensible collecting your unpleasant but invitation.', NULL, 2, NULL, '2023-11-15 10:47:37', '2023-11-15 04:47:37', '2023-11-15 04:47:37'),
-(61, 169, 'user', 8, '127.0.0.1', 'Habib', 'Habib', 'Habib', 'Nice Comment', 57, 1, NULL, '2023-11-15 11:11:18', '2023-11-15 05:11:18', '2023-11-15 05:11:18'),
-(62, 169, 'user', 8, '127.0.0.1', 'Habib', 'Habib', 'Habib', ' Nice Comment 2', 57, 2, NULL, '2023-11-15 11:11:18', '2023-11-15 05:11:18', '2023-11-15 05:11:18'),
-(63, 169, 'admin', 1, '172.68.218.134', 'Wade Wilson', 'admin@example.com', '', 'New Testing', NULL, 1, NULL, '2023-03-01 11:32:22', '2023-03-01 16:32:22', '2023-03-01 16:32:22'),
-(64, 160, 'user', 8, '127.0.0.1', 'Habib', 'Habib', 'Habib', 'New Guys', NULL, 1, NULL, '2023-11-15 15:41:32', '2023-11-15 09:41:32', '2023-11-15 09:41:32'),
-(65, 160, 'user', 8, '127.0.0.1', 'Habib', 'Habib', 'Habib', 'hii', NULL, 1, NULL, '2023-11-15 15:42:15', '2023-11-15 09:42:15', '2023-11-15 09:42:15'),
-(66, 169, 'user', 8, '127.0.0.1', 'Habib', 'Habib', 'Habib', 'Woprking', NULL, 1, NULL, '2023-11-15 15:45:41', '2023-11-15 09:45:41', '2023-11-15 09:45:41'),
-(67, 160, 'user', 8, '127.0.0.1', 'Habib', 'Habib', 'Habib', 'Nice blog', NULL, 1, NULL, '2023-11-15 15:46:59', '2023-11-15 09:46:59', '2023-11-15 09:46:59'),
-(68, 177, 'user', 11, '127.0.0.1', 'Rohan', 'Rohan', 'Rohan', 'Nice Blog ANIKI', NULL, 1, NULL, '2023-11-18 10:26:20', '2023-11-18 04:26:20', '2023-11-18 04:26:20'),
-(69, 179, 'anonymous', NULL, '118.179.125.221', 'Anonymous', '', '', 'Nice blog', NULL, 1, NULL, '2023-12-02 17:21:40', '2023-12-02 17:21:40', '2023-12-02 17:21:40'),
-(70, 199, 'user', 11, '118.179.125.221', 'Rohan', 'rohan@gmail.com', 'https://newslooks.themelooks.us', 'Nice Article Brother', NULL, 1, NULL, '2023-12-11 11:11:18', '2023-12-11 11:11:18', '2023-12-11 11:14:22'),
-(71, 199, 'admin', 1, '118.179.125.221', 'Wade Wilson', 'admin@example.com', 'https://newslooks.themelooks.us', 'Thank You', 70, 1, NULL, '2023-12-11 11:14:37', '2023-12-11 11:14:37', '2023-12-11 11:14:37');
+(5, 169, 'admin', 1, '192.0.2.2', 'Wade Wilson', 'admin@example.com', 'https://oktasker.com', 'test', NULL, 1, NULL, '2023-03-01 11:16:59', '2023-03-01 16:16:59', '2023-03-01 16:16:59'),
+(6, 169, 'admin', 1, '192.0.2.3', 'Wade Wilson', 'admin@example.com', 'https://oktasker.com', 'test2', NULL, 1, NULL, '2023-03-01 11:24:37', '2023-03-01 16:24:37', '2023-03-01 16:24:37'),
+(7, 169, 'admin', 1, '192.0.2.4', 'Wade Wilson', 'admin@example.com', 'https://oktasker.com', 'test 3', NULL, 1, NULL, '2023-03-01 11:30:09', '2023-03-01 16:30:09', '2023-03-01 16:30:09'),
+(8, 169, 'admin', 1, '192.0.2.5', 'Wade Wilson', 'admin@example.com', 'https://oktasker.com', 'test 4', NULL, 1, NULL, '2023-03-01 11:32:22', '2023-03-01 16:32:22', '2023-03-01 16:32:22'),
+(9, 169, 'admin', 1, '192.0.2.6', 'Wade Wilson', 'admin@example.com', 'https://oktasker.com', 'test 5', NULL, 1, NULL, '2023-03-01 11:35:19', '2023-03-01 16:35:19', '2023-03-01 16:35:19'),
+(10, 169, 'admin', 1, '192.0.2.7', 'Wade Wilson', 'admin@example.com', 'https://oktasker.com', 'test 6', NULL, 1, NULL, '2023-03-01 11:37:05', '2023-03-01 16:37:05', '2023-03-01 16:37:05'),
+(11, 169, 'admin', 1, '192.0.2.8', 'Wade Wilson', 'admin@example.com', 'https://oktasker.com', 'test 7', NULL, 1, NULL, '2023-03-01 11:48:49', '2023-03-01 16:48:49', '2023-03-01 16:48:49'),
+(12, 169, 'admin', 1, '192.0.2.9', 'Wade Wilson', 'admin@example.com', 'https://oktasker.com', 'test8', NULL, 1, NULL, '2023-03-01 11:55:44', '2023-03-01 16:55:44', '2023-03-01 16:55:44'),
+(13, 169, 'admin', 1, '192.0.2.10', 'Wade Wilson', 'admin@example.com', 'https://oktasker.com', 'test9', NULL, 1, NULL, '2023-03-01 11:57:38', '2023-03-01 16:57:38', '2023-03-01 16:57:38'),
+(14, 169, 'admin', 1, '192.0.2.11', 'Wade Wilson', 'admin@example.com', 'https://oktasker.com', 'test 9', NULL, 1, NULL, '2023-03-01 12:03:11', '2023-03-01 17:03:11', '2023-03-01 17:03:11'),
+(15, 169, 'admin', 1, '192.0.2.12', 'Wade Wilson', 'admin@example.com', 'https://oktasker.com', 'test 10', NULL, 1, NULL, '2023-03-01 12:05:06', '2023-03-01 17:05:06', '2023-03-01 17:05:06'),
+(16, 169, 'admin', 1, '192.0.2.13', 'Wade Wilson', 'admin@example.com', 'https://oktasker.com', 'test 9', NULL, 1, NULL, '2023-03-01 12:21:49', '2023-03-01 17:21:49', '2023-03-01 17:21:49'),
+(54, 169, 'user', 8, '192.0.2.14', 'Habib', 'Habib', 'Habib', 'New Comments', NULL, 4, NULL, '2023-11-14 16:44:24', '2023-11-14 10:44:24', '2023-11-14 10:44:24'),
+(55, 169, 'user', 8, '192.0.2.15', 'Habib', 'Habib', 'Habib', 'Again Comment', NULL, 1, NULL, '2023-11-14 16:47:32', '2023-11-14 10:47:32', '2023-11-14 10:47:32'),
+(56, 169, 'anonymous', NULL, '192.0.2.16', 'Anonymous', '', '', 'New Comments From Anomoly', NULL, 1, NULL, '2023-11-14 17:45:07', '2023-11-14 11:45:07', '2023-11-14 11:45:07'),
+(57, 169, 'admin', 1, '192.0.2.17', 'Wade Wilson', 'Wade Wilson', 'Wade Wilson', 'Hello Email', NULL, 1, NULL, '2023-11-14 18:00:16', '2023-11-14 12:00:16', '2023-11-14 12:00:16'),
+(58, 158, 'user', 8, '192.0.2.18', 'Habib', 'Habib', 'Habib', 'Hello Comments', NULL, 3, NULL, '2023-11-15 10:46:56', '2023-11-15 04:46:56', '2023-11-15 04:46:56'),
+(59, 160, 'user', 8, '192.0.2.19', 'Habib', 'Habib', 'Habib', 'New Comments 2 \r\nFor a slightly more opinionated version of the video reviews above half of the Island worlds designed to power up everything', NULL, 1, NULL, '2023-11-15 10:47:21', '2023-11-15 04:47:21', '2023-11-15 04:47:21'),
+(60, 162, 'user', 8, '192.0.2.20', 'Habib', 'Habib', 'Habib', 'She travelling acceptance men unpleasant her especially to entreaties law. Law forth but end any arise chief arose. Old her say learn these large. Joy fond many in ham high seen this. Few preferred continual led incommode neglected. To discovered insensible collecting your unpleasant but invitation.', NULL, 2, NULL, '2023-11-15 10:47:37', '2023-11-15 04:47:37', '2023-11-15 04:47:37'),
+(61, 169, 'user', 8, '192.0.2.21', 'Habib', 'Habib', 'Habib', 'Nice Comment', 57, 1, NULL, '2023-11-15 11:11:18', '2023-11-15 05:11:18', '2023-11-15 05:11:18'),
+(62, 169, 'user', 8, '192.0.2.22', 'Habib', 'Habib', 'Habib', ' Nice Comment 2', 57, 2, NULL, '2023-11-15 11:11:18', '2023-11-15 05:11:18', '2023-11-15 05:11:18'),
+(63, 169, 'admin', 1, '192.0.2.23', 'Wade Wilson', 'admin@example.com', '', 'New Testing', NULL, 1, NULL, '2023-03-01 11:32:22', '2023-03-01 16:32:22', '2023-03-01 16:32:22'),
+(64, 160, 'user', 8, '192.0.2.24', 'Habib', 'Habib', 'Habib', 'New Guys', NULL, 1, NULL, '2023-11-15 15:41:32', '2023-11-15 09:41:32', '2023-11-15 09:41:32'),
+(65, 160, 'user', 8, '192.0.2.25', 'Habib', 'Habib', 'Habib', 'hii', NULL, 1, NULL, '2023-11-15 15:42:15', '2023-11-15 09:42:15', '2023-11-15 09:42:15'),
+(66, 169, 'user', 8, '192.0.2.26', 'Habib', 'Habib', 'Habib', 'Woprking', NULL, 1, NULL, '2023-11-15 15:45:41', '2023-11-15 09:45:41', '2023-11-15 09:45:41'),
+(67, 160, 'user', 8, '192.0.2.27', 'Habib', 'Habib', 'Habib', 'Nice blog', NULL, 1, NULL, '2023-11-15 15:46:59', '2023-11-15 09:46:59', '2023-11-15 09:46:59'),
+(68, 177, 'user', 11, '192.0.2.28', 'Rohan', 'Rohan', 'Rohan', 'Nice Blog ANIKI', NULL, 1, NULL, '2023-11-18 10:26:20', '2023-11-18 04:26:20', '2023-11-18 04:26:20'),
+(69, 179, 'anonymous', NULL, '192.0.2.29', 'Anonymous', '', '', 'Nice blog', NULL, 1, NULL, '2023-12-02 17:21:40', '2023-12-02 17:21:40', '2023-12-02 17:21:40'),
+(70, 199, 'user', 11, '192.0.2.30', 'Rohan', 'rohan@example.test', 'https://newslooks.themelooks.us', 'Nice Article Brother', NULL, 1, NULL, '2023-12-11 11:11:18', '2023-12-11 11:11:18', '2023-12-11 11:14:22'),
+(71, 199, 'admin', 1, '192.0.2.31', 'Wade Wilson', 'admin@example.com', 'https://newslooks.themelooks.us', 'Thank You', 70, 1, NULL, '2023-12-11 11:14:37', '2023-12-11 11:14:37', '2023-12-11 11:14:37');
 
 -- --------------------------------------------------------
 
@@ -2231,7 +2231,7 @@ INSERT INTO `tl_sidebar_widget_has_values` (`id`, `sidebar_has_widget_id`, `valu
 (214, 857, '{\"widget_title\":\"Recent Comment\",\"number_of_comments\":\"3\"}'),
 (215, 858, '{\"widget_title\":\"Online Voting\",\"vote_id\":\"1\"}'),
 (216, 859, '{\"widget_title\":\"Best Footballer\",\"vote_id\":\"5\"}'),
-(217, 860, '{\"widget_title\":\"ABOUT US\",\"description\":\"We are the most popular news portal in the world. Here we publish all kinds of the latest news.\",\"address\":\"27 Division St, New York, NY 1002 United States of America\",\"mail\":\"support@newslooks.com\",\"phone\":\"+96-321-111-222\"}'),
+(217, 860, '{\"widget_title\":\"ABOUT US\",\"description\":\"We are the most popular news portal in the world. Here we publish all kinds of the latest news.\",\"address\":\"27 Division St, New York, NY 1002 United States of America\",\"mail\":\"support@example.test\",\"phone\":\"+96-321-111-222\"}'),
 (218, 862, '{\"widget_title\":\"Gallery\",\"blog_type\":\"recent\"}'),
 (219, 861, '{\"widget_title\":\"Important Links\",\"menu_group_id\":\"26\"}'),
 (220, 863, '{\"widget_title\":\"Best Author\",\"author_id\":\"1\",\"author_designation\":\"SEO Specilist\",\"author_image\":\"1074\"}'),
@@ -2245,7 +2245,7 @@ INSERT INTO `tl_sidebar_widget_has_values` (`id`, `sidebar_has_widget_id`, `valu
 (228, 871, '{\"number_of_blogs\":\"4\"}'),
 (229, 872, '{\"widget_title\":\"Voting\",\"vote_id\":\"5\"}'),
 (230, 873, '{\"widget_title\":\"Recent Comment\",\"number_of_comments\":\"3\"}'),
-(231, 874, '{\"widget_title\":\"About Us\",\"description\":\"We are the most popular news portal in the world. Here we publish all kinds of the latest news.\",\"address\":\"53 Rain Road, Suite 41 Austin, NY, USA\",\"mail\":\"contact@gmail.com\",\"phone\":\"415-737-5445\"}'),
+(231, 874, '{\"widget_title\":\"About Us\",\"description\":\"We are the most popular news portal in the world. Here we publish all kinds of the latest news.\",\"address\":\"53 Rain Road, Suite 41 Austin, NY, USA\",\"mail\":\"contact@example.test\",\"phone\":\"415-737-5445\"}'),
 (232, 875, '{\"widget_title\":\"Company\",\"menu_group_id\":\"33\"}'),
 (233, 876, '{\"widget_title\":\"Image Post\",\"blog_type\":\"recent\"}'),
 (234, 877, '{\"widget_title\":\"Follow US\"}'),
@@ -2348,8 +2348,8 @@ INSERT INTO `tl_theme_option_settings` (`id`, `theme_id`, `option_name`, `field_
 (4282, 16, 'back_to_top', 'back_to_top_button_hover_bgcolor', NULL, NULL),
 (4283, 16, 'back_to_top', 'back_to_top_button_hover_bgcolor_transparent', NULL, NULL),
 (4284, 16, 'back_to_top', 'back_to_top_button_on_mobile', '1', NULL),
-(4285, 16, 'subscribe', 'mailchimp_api_key', '4fb78273ece5556c1ec5446bbdcd8032-us13', NULL),
-(4286, 16, 'subscribe', 'mailchimp_list_id', '46a9ce00e7', NULL),
+(4285, 16, 'subscribe', 'mailchimp_api_key', '', NULL),
+(4286, 16, 'subscribe', 'mailchimp_list_id', '', NULL),
 (4287, 16, 'subscribe', 'footer_subscribe_form', '1', NULL),
 (4288, 16, 'subscribe', 'subscribe_form_title', 'Subscribe Our Newsletter', NULL),
 (4289, 16, 'subscribe', 'subscribe_form_placeholder', 'Enter Your Email', NULL),
@@ -2393,7 +2393,7 @@ INSERT INTO `tl_theme_option_settings` (`id`, `theme_id`, `option_name`, `field_
 (4425, 16, 'contact', 'contact_subject_placeholder', 'Subject', NULL),
 (4426, 16, 'contact', 'contact_message_placeholder', 'Your Message', NULL),
 (4427, 16, 'contact', 'contact_button_text', 'Submit', NULL),
-(4428, 16, 'contact', 'contact_sent_email', 'mahfuzur.themelooks@gmail.com', NULL),
+(4428, 16, 'contact', 'contact_sent_email', 'mahfuzur.themelooks@example.test', NULL),
 (4429, 16, 'contact', 'contact_header_menu', '1', NULL),
 (4430, 16, 'contact', 'contact_header_text', 'Contact', NULL),
 (4431, 16, 'footer', 'custom_footer_style', '0', NULL),
@@ -2929,8 +2929,8 @@ INSERT INTO `tl_theme_option_settings` (`id`, `theme_id`, `option_name`, `field_
 (5390, 22, 'custom_fonts', 'custom_font_1_eot', '', NULL),
 (5391, 22, 'custom_fonts', 'custom_font_2', '0', NULL),
 (5392, 22, 'custom_fonts', 'custom_font_1_ttf_file', '/opt/lampp/temp/phpWgh8Do', NULL),
-(5413, 22, 'subscribe', 'mailchimp_api_key', '5700913d72751e5bcf22546c2257baf6-us13', NULL),
-(5414, 22, 'subscribe', 'mailchimp_list_id', '46a9ce00e7', NULL),
+(5413, 22, 'subscribe', 'mailchimp_api_key', '', NULL),
+(5414, 22, 'subscribe', 'mailchimp_list_id', '', NULL),
 (5415, 22, 'subscribe', 'custom_footer_subscribe', '0', NULL),
 (5416, 22, 'subscribe', 'newsletter_bg_image', NULL, NULL),
 (5417, 22, 'subscribe', 'newsletter_title_color', NULL, NULL),
@@ -2950,7 +2950,7 @@ INSERT INTO `tl_theme_option_settings` (`id`, `theme_id`, `option_name`, `field_
 (5431, 22, 'website_popup', 'website_popup_subscribe_status', '0', NULL),
 (5432, 22, 'website_popup', 'files', '/tmp/phptpOFmZ', NULL),
 (5433, 22, 'theme_color', 'theme_primary_color', '', NULL),
-(5434, 22, 'contact', 'contact_sent_email', 'mahfuzur.themelooks@gmail.com', NULL),
+(5434, 22, 'contact', 'contact_sent_email', 'mahfuzur.themelooks@example.test', NULL),
 (5435, 22, 'footer', 'footer_1_widget_title_after_color', '', NULL),
 (5436, 22, 'footer', 'footer_1_widget_title_after_color_transparent', '0', NULL),
 (5437, 22, 'footer', 'footer_logo', '1138', NULL),
@@ -5353,11 +5353,11 @@ CREATE TABLE `tl_users` (
 --
 
 INSERT INTO `tl_users` (`id`, `uid`, `name`, `email`, `image`, `password`, `remember_token`, `email_verified_at`, `is_logged_in`, `status`, `user_type`, `created_at`, `updated_at`) VALUES
-(1, 'SUPER-ADMIN-1230202', 'Wade Wilson', 'admin@example.com', '1158', '$2y$10$a4fb9Lw2E44kYTviGQwIvOjeI2zCBz5b14YexFA.7G8n3bId/MDjy', NULL, NULL, NULL, 1, 1, '2023-02-01 21:40:15', '2023-12-28 06:20:45'),
-(8, 'USERQdw1G', 'Habib', 'habib@gmail.com', 'USERQdw1G1703744585.png', '$2y$10$1xy6beM0YlR1P6Au63dN1e7nRLtcWgH8dUi5.1Dki0BcyfWhGFv7S', NULL, NULL, NULL, 1, 2, '2023-11-12 06:50:02', '2023-12-28 06:23:05'),
-(11, 'USERTBonS', 'Rohan', 'rohan@gmail.com', 'USERTBonS1703744742.png', '$2y$10$lNxa0v1FSrp4VbKGYed3qOCRfYHhFvnoFb3eZo6AgAyoli/fWJEAK', NULL, NULL, NULL, 1, 2, '2023-11-12 06:51:25', '2023-12-28 06:25:42'),
-(13, 'USER8idNn', 'Alen', 'alen@gmail.com', 'USER8idNn1703744847.png', '$2y$10$dfq3FLcFuBTTghnUvt8CBeMu4HgwktL7b48If7Gi.KvVCV8m6oXm2', NULL, NULL, NULL, 1, 2, '2023-12-11 15:38:37', '2023-12-28 06:27:27'),
-(14, 'USERqCiB7', 'Clark', 'clark@gmail.cpm', 'USERqCiB71703744806.png', '$2y$10$hjunqKO/q54DuwvOBCfxUeaqz6WCQQPtUAHGngqxnxwESA71LKK9u', NULL, NULL, NULL, 1, 2, '2023-12-11 15:39:13', '2023-12-28 06:26:46');
+(1, 'SUPER-ADMIN-1230202', 'Wade Wilson', 'admin@example.com', '1158', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, NULL, 1, 1, '2023-02-01 21:40:15', '2023-12-28 06:20:45'),
+(8, 'USERQdw1G', 'Habib', 'habib@example.test', 'USERQdw1G1703744585.png', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, NULL, 1, 2, '2023-11-12 06:50:02', '2023-12-28 06:23:05'),
+(11, 'USERTBonS', 'Rohan', 'rohan@example.test', 'USERTBonS1703744742.png', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, NULL, 1, 2, '2023-11-12 06:51:25', '2023-12-28 06:25:42'),
+(13, 'USER8idNn', 'Alen', 'alen@example.test', 'USER8idNn1703744847.png', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, NULL, 1, 2, '2023-12-11 15:38:37', '2023-12-28 06:27:27'),
+(14, 'USERqCiB7', 'Clark', 'clark@example.test', 'USERqCiB71703744806.png', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, NULL, 1, 2, '2023-12-11 15:39:13', '2023-12-28 06:26:46');
 
 -- --------------------------------------------------------
 

@@ -2,11 +2,14 @@
 
 namespace App\Providers;
 
+use App\Providers\Concerns\QueriesCmsStateDuringBoot;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Route;
 
 class PluginRouteServices extends ServiceProvider
 {
+    use QueriesCmsStateDuringBoot;
+
     /**
      * The path to the "home" route for your application.
      *
@@ -25,7 +28,7 @@ class PluginRouteServices extends ServiceProvider
     {
         $this->routes(function () {
             if (env('IS_USER_REGISTERED')==1) {
-                $plugins = getActivePlugins();
+                $plugins = $this->queryCmsStateDuringBoot(fn () => getActivePlugins(), collect());
 
                 foreach ($plugins as $plugin) {
                     if (file_exists(base_path('plugins/' . $plugin->location . '/routes/api.php'))) {

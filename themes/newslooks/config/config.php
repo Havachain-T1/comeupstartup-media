@@ -40,7 +40,7 @@ return [
 
     //google font api
     'google_font_api_key' => [
-        'url' => "https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyB8m91pnDhVEOBYvwl0PUMosUCXKSH-uuk"
+        'url' => 'https://www.googleapis.com/webfonts/v1/webfonts?key=' . env('GOOGLE_FONTS_API_KEY', '')
     ],
 
     // Blog Filter text

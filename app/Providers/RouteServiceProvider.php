@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Providers\Concerns\QueriesCmsStateDuringBoot;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Http\Request;
@@ -10,6 +11,8 @@ use Illuminate\Support\Facades\Route;
 
 class RouteServiceProvider extends ServiceProvider
 {
+    use QueriesCmsStateDuringBoot;
+
     /**
      * The path to the "home" route for your application.
      *
@@ -36,7 +39,7 @@ class RouteServiceProvider extends ServiceProvider
                 ->group(base_path('routes/web.php'));
 
             if (env('IS_USER_REGISTERED') == 1) {
-                $active_theme = getActiveTheme();
+                $active_theme = $this->queryCmsStateDuringBoot(fn () => getActiveTheme());
                 if ($active_theme != null) {
                     if (file_exists(base_path('themes/' . $active_theme->location . '/routes/api.php'))) {
                         Route::middleware('api')
