@@ -1,0 +1,48 @@
+# Local development only. Values come from .env (copy .env.example).
+services:
+  app:
+    build:
+      context: .
+      args:
+        UID: ${DOCKER_UID:-1000}
+        GID: ${DOCKER_GID:-1000}
+    image: comeupstartup-media-app:dev
+    ports:
+      - "${APP_PORT:-8080}:80"
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: mariadb:10.4
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:?set DB_ROOT_PASSWORD in .env}
+      MYSQL_DATABASE: ${DB_DATABASE:-comeupstartup}
+      MYSQL_USER: ${DB_USERNAME:-comeupstartup}
+      MYSQL_PASSWORD: ${DB_PASSWORD:?set DB_PASSWORD in .env}
+      DB_TEST_DATABASE: ${DB_TEST_DATABASE:-comeupstartup_test}
+    command: ["--character-set-server=utf8mb4", "--collation-server=utf8mb4_unicode_ci"]
+    volumes:
+      - db-data:/var/lib/mysql
+      - ./docker/mariadb/init:/docker-entrypoint-initdb.d:ro
+      - ./database/data.sql:/seed/data.sql:ro
+    ports:
+      - "127.0.0.1:${DB_FORWARD_PORT:-33060}:3306"
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 -uroot -p\"$$MYSQL_ROOT_PASSWORD\" --silent"]
+      interval: 5s
+      timeout: 5s
+      retries: 60
+
+  node:
+    image: node:16-bullseye-slim
+    profiles: ["assets"]
+    working_dir: /app
+    volumes:
+      - .:/app
+    command: sh -c "npm ci && npm run production"
+
+volumes:
+  db-data:
