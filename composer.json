@@ -53,7 +53,8 @@
             "Core/Helpers/Helpers.php",
             "Core/Helpers/Theme.php",
             "Core/Helpers/Plugin.php",
-            "Core/Helpers/Notification.php"
+            "Core/Helpers/Notification.php",
+            "app/Services/BrandPress/helpers.php"
         ]
     },
     "autoload-dev": {
