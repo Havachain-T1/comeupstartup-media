@@ -16,8 +16,6 @@ class LanguageController extends Controller
     public function __construct(LanguageRepository $language_repository)
     {
         $this->language_repository = $language_repository;
-        $this->middleware('themelo' . 'oks');
-        $this->middleware('lic'. 'ense');
     }
 
     /**

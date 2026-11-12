@@ -5,8 +5,6 @@ namespace Tests\Feature\Smoke;
 use Core\Models\User;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Tests\TestCase;
-use ThemeLooks\SecureLooks\Trait\StringHelper;
-use ThemeLooks\SecureLooks\Trait\ThemeLooks;
 
 class AuthenticationAndAdminAccessTest extends TestCase
 {
@@ -46,17 +44,23 @@ class AuthenticationAndAdminAccessTest extends TestCase
             ->assertRedirect(route('core.login'));
     }
 
-    public function test_unlicensed_install_redirects_licence_gated_admin_pages_to_activation()
+    public function test_admin_pages_are_not_gated_by_vendor_licence_verification()
     {
-        $this->actingAs(User::findOrFail(1))
-            ->get(route('admin.dashboard'))
-            ->assertRedirect(route(config('themelooks.license_active_route')));
+        $admin = User::findOrFail(1);
+
+        foreach (['admin.dashboard', 'core.plugins.index', 'core.themes.index', 'core.manage.menus', 'theme.newslooks.widgets'] as $name) {
+            $this->actingAs($admin)->get(route($name))->assertOk();
+        }
+
+        foreach (['core.license.active', 'core.license.verify.page', 'core.license.key.verify', 'core.license.key.store', 'core.plugins.purchase.verify', 'core.theme.purchase.verify'] as $name) {
+            $this->assertFalse(\Illuminate\Support\Facades\Route::has($name), $name);
+        }
+
+        $this->assertFalse(class_exists('ThemeLooks\\SecureLooks\\SecureLooks'));
     }
 
     public function test_seeded_administrator_can_open_admin_pages()
     {
-        // The vendor (ThemeLooks) licence gate needs a real purchase key; it is not under test here.
-        $this->withoutMiddleware([StringHelper::class, ThemeLooks::class]);
         $admin = User::findOrFail(1);
 
         $this->actingAs($admin)->get(route('admin.dashboard'))->assertOk();

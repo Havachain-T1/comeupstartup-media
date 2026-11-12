@@ -52,7 +52,7 @@ Route::group(['middleware' => ['auth', 'admin.guard'], 'prefix' => getAdminPrefi
     Route::post('browser-reports', [ReportController::class, 'browserReports'])->name('theme.newslooks.browser.reports');
     Route::post('device-reports', [ReportController::class, 'deviceReports'])->name('theme.newslooks.device.reports');
 
-    Route::middleware(['can:Manage Widget', 't' . 'he' . 'm' . 'elo' . 'oks', 'l' . 'ice' . 'n' . 'se'])->group(function () {
+    Route::middleware(['can:Manage Widget'])->group(function () {
         // Widgets Controller
         Route::get('/manage-widgets', [WidgetController::class, 'widgets'])->name('theme.newslooks.widgets');
         Route::post('/get-widget-input', [WidgetController::class, 'getWidgetInputFields'])->name('theme.newslooks.widget.get_input_field');
@@ -62,7 +62,7 @@ Route::group(['middleware' => ['auth', 'admin.guard'], 'prefix' => getAdminPrefi
         Route::post('/widget-order-save', [WidgetController::class, 'saveWidgetOrder'])->name('theme.newslooks.widget.saveWidgetOrder');
     });
 
-    Route::middleware(['can:Manage Theme General settings', 't' . 'h' . 'em' . 'el' . 'ooks', 'lic' . 'e' . 'n' . 's' . 'e'])->group(function () {
+    Route::middleware(['can:Manage Theme General settings'])->group(function () {
         //Theme Options
         Route::get('/theme-options', [ThemeOptionController::class, 'themeOptions'])->name('theme.newslooks.options');
         Route::post('/get-theme-option-form', [ThemeOptionController::class, 'getOptionForm'])->name('theme.newslooks.get.option.form');
@@ -71,7 +71,7 @@ Route::group(['middleware' => ['auth', 'admin.guard'], 'prefix' => getAdminPrefi
         Route::get('/theme-option/download', [ThemeOptionController::class, 'downloadThemeOption'])->name('theme.newslooks.theme-option.download');
     });
 
-    Route::middleware(['can:Manage Voting', 't' . 'h' . 'em' . 'el' . 'ooks', 'lic' . 'e' . 'n' . 's' . 'e'])->group(function () {
+    Route::middleware(['can:Manage Voting'])->group(function () {
         //Vote Options
         Route::get('/votes', [VotingController::class, 'index'])->name('theme.newslooks.vote.index');
         Route::get('/vote/create', [VotingController::class, 'create'])->name('theme.newslooks.vote.create');
@@ -81,7 +81,7 @@ Route::group(['middleware' => ['auth', 'admin.guard'], 'prefix' => getAdminPrefi
         Route::delete('/vote/delete/{vote}', [VotingController::class, 'delete'])->name('theme.newslooks.vote.delete')->middleware('demo');
     });
 
-    Route::middleware(['can:Manage Members' , 't' . 'h' . 'em' . 'el' . 'ooks', 'lic' . 'e' . 'n' . 's' . 'e'])->group(function () {
+    Route::middleware(['can:Manage Members' ])->group(function () {
         //Vote Options
         Route::get('/manage-users', [ManageUserController::class, 'allUsers'])->name('theme.newslooks.users');
         Route::post('/users/status', [ManageUserController::class, 'statusUpdate'])->name('theme.newslooks.users.status')->middleware('demo');

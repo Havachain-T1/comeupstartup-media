@@ -22,7 +22,6 @@ class PageController extends Controller
   {
     $this->language_repository = $language_repository;
     $this->page_repository = $page_repository;
-    $this->middleware(['the'.'melo'.'oks', 'l'.'ice'.'ns'.'e']);
   }
 
   /**

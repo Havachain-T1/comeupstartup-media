@@ -45,8 +45,6 @@ Route::get('/', function () {
 Route::group(['middleware' => ['auth', 'admin.guard']], function () {
     Route::get('/dashboard', [DashboardController::class, 'dashboard'])
         ->name('admin.dashboard')->middleware(['can:Manage Dashboard']);
-    Route::post('/activate-license', [DashboardController::class, 'licenseActive'])
-        ->name('admin.license.active')->middleware(['can:Manage Dashboard']);
 
     //Languages 
     Route::middleware(['can:Manage Language'])->group(function () {
@@ -143,27 +141,25 @@ Route::group(['middleware' => ['auth', 'admin.guard']], function () {
     Route::post('/update-mood', [StyleController::class, 'changeMood'])->name('core.mood.change');
 
     // Plugins
-    Route::middleware(['can:Manage Plugins', 't' . 'hemelooks', 'l' . 'icense'])->group(function () {
+    Route::middleware(['can:Manage Plugins'])->group(function () {
         Route::get('/plugins', [PluginsController::class, 'index'])->name('core.plugins.index');
         Route::post('/plugin-inactive', [PluginsController::class, 'inactive'])->name('core.plugins.inactive');
         Route::post('/plugin-active', [PluginsController::class, 'activate'])->name('core.plugins.active');
         Route::get('/plugin-create', [PluginsController::class, 'create'])->name('core.plugins.create');
         Route::post('/plugin-install', [PluginsController::class, 'install'])->name('core.plugins.install');
-        Route::post('/plugin/verify', [PluginsController::class, 'verify'])->name('core.plugins.purchase.verify');
     });
 
     //Themes
-    Route::middleware(['can:Manage Themes', 'them' . 'elo' . 'oks', 'lic' . 'ens' . 'e'])->group(function () {
+    Route::middleware(['can:Manage Themes'])->group(function () {
         Route::get('/themes', [ThemesController::class, 'index'])->name('core.themes.index');
         Route::post('/theme-inactive', [ThemesController::class, 'activate'])->name('core.themes.active');
         Route::get('/theme-create', [ThemesController::class, 'create'])->name('core.themes.create');
         Route::post('/theme-install', [ThemesController::class, 'install'])->name('core.themes.install');
-        Route::post('/theme/verify', [ThemesController::class, 'verify'])->name('core.theme.purchase.verify');
         Route::delete('/theme/delete/{theme}', [ThemesController::class, 'delete'])->name('core.themes.delete');
     });
 
     //Menu controller
-    Route::middleware(['can:Manage Menus', 'menu.maintain', 'th' . 'emeloo' . 'ks', 'l' . 'icens' . 'e'])->group(function () {
+    Route::middleware(['can:Manage Menus', 'menu.maintain'])->group(function () {
         Route::get('manage-menus', [MenuController::class, 'index'])->name('core.manage.menus');
         Route::post('tree-view-data', [MenuController::class, 'treeViewData'])->name('core.tree.view.data');
 
@@ -188,7 +184,7 @@ Route::group(['middleware' => ['auth', 'admin.guard']], function () {
 
 
     //Activity Log
-    Route::middleware(['can:Manage Login activity', 'th' . 'emelo' . 'oks', 'l' . 'ice' . 'nse'])->group(function () {
+    Route::middleware(['can:Manage Login activity'])->group(function () {
         Route::get('get-login-activity', [ActivityLogController::class, 'getLoginActivity'])->name('core.get.login.activity');
         Route::get('get-all-login-activity', [ActivityLogController::class, 'getAllLoginActivity'])->name('core.get.all.login.activity');
         Route::post('login-activity-delete', [ActivityLogController::class, 'loginActivityDelete'])->name('core.login.activity.delete');
@@ -199,7 +195,7 @@ Route::group(['middleware' => ['auth', 'admin.guard']], function () {
     //----Blog & page----//
     // Blog Category Routes
     Route::controller(BlogCategoryController::class)->group(function () {
-        Route::middleware(['can:Manage Category', 'the' . 'melo' . 'oks', 'li' . 'cen' . 'se'])->group(function () {
+        Route::middleware(['can:Manage Category'])->group(function () {
             Route::get('/blog-category', 'blogCategory')->name('core.blog.category');
             Route::get('/add-blog-category', 'addBlogCategory')->name('core.add.blog.category');
             Route::post('/store-blog-category', 'storeBlogCategory')->name('core.store.blog.category');
@@ -260,7 +256,7 @@ Route::group(['middleware' => ['auth', 'admin.guard']], function () {
 
     //Blog Comment Routes
     Route::controller(CommentController::class)->group(function () {
-        Route::middleware(['can:Manage Comment', 't' . 'hemelo' . 'oks', 'li' . 'cen' . 'se'])->group(function () {
+        Route::middleware(['can:Manage Comment'])->group(function () {
             Route::get('/comments', 'comment')->name('core.blog.comment');
             Route::post('/comment/bulk/action',  'bulkAction')->name('core.blog.comment.bulk.action')->middleware('demo');
             Route::get('/comments/edit/{id}', 'editComment')->name('core.blog.comment.edit')->middleware('demo');
@@ -307,7 +303,7 @@ Route::group(['middleware' => ['auth', 'admin.guard']], function () {
     /**
      * Seo settings
      */
-    Route::middleware(['can:Manage Seo Settings', 't' . 'he' . 'm' . 'elo' . 'oks', 'l' . 'ice' . 'n' . 'se'])->group(function () {
+    Route::middleware(['can:Manage Seo Settings'])->group(function () {
         Route::get('/seo-settings', [SeoController::class, 'seoSettings'])->name('core.seo.settings');
         Route::post('/update-seo-settings', [SeoController::class, 'updateSeoSettings'])->name('core.seo.settings.update');
     });
@@ -319,12 +315,6 @@ Route::group(['middleware' => ['auth', 'admin.guard']], function () {
     Route::view('/sitemap', 'core::base.sitemap.sitemap')->name('core.admin.sitemap');
     Route::get('/generate-sitemap', [SystemController::class, 'generateSitemap'])->name('core.admin.generate.sitemap');
 
-    Route::view('activate-license', 'core::base.license.activate')->name('core.license.active');
-    Route::post('verify-license', [SystemController::class, 'activateLicense'])->name('core.license.key.verify');
-    Route::view('welcome', 'core::base.welcome.index')->name('core.admin.welcome');
-    Route::view('verify-license-key', 'core::base.license.license_form')->name('core.license.verify.page');
-    Route::post('store-purchase-key', [SystemController::class, 'storePurchaseKey'])->name('core.license.key.store');
-    Route::view('verify-completed', 'core::base.license.completed_verify')->name('core.license.verify.success');
 
     /**
      * Update system Route

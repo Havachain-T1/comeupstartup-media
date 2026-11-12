@@ -13,10 +13,6 @@ use Illuminate\Support\Facades\Auth;
 
 class RolePermissionController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware([ 'themeloo' . 'ks', 'l'. 'icense']);
-    }
 
     /**
      * Fetch all roles from database

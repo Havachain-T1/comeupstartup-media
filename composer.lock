@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2479060e01d20055d3002a05e0f61918",
+    "content-hash": "3d200406854ac253438214c8a49f1530",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -8715,43 +8715,6 @@
                 }
             ],
             "time": "2026-10-23T15:27:52+00:00"
-        },
-        {
-            "name": "themelooks/securelooks",
-            "version": "3.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/kousar1234/securelooks.git",
-                "reference": "6e636d1560bc37652a4a217b6ea742bebf350318"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/kousar1234/securelooks/zipball/6e636d1560bc37652a4a217b6ea742bebf350318",
-                "reference": "6e636d1560bc37652a4a217b6ea742bebf350318",
-                "shasum": ""
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "ThemeLooks\\SecureLooks\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Kousar Rahman",
-                    "email": "kousar.themelooks@gmail.com"
-                }
-            ],
-            "description": "Laravel project management system",
-            "support": {
-                "issues": "https://github.com/kousar1234/securelooks/issues",
-                "source": "https://github.com/kousar1234/securelooks/tree/3.0.1"
-            },
-            "time": "2023-11-04T10:45:47+00:00"
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",

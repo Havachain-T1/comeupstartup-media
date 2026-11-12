@@ -14,10 +14,6 @@ use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware(implode(['lice', 'nse']));
-    }
 
     public function dashboard(Request $request)
     {

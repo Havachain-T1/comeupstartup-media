@@ -2,7 +2,6 @@
 
 namespace Core\Http\Controllers;
 
-use AppLoader;
 use Core\Models\Themes;
 use Core\Models\TlBlog;
 use Core\Models\TlPage;
@@ -13,27 +12,6 @@ use App\Http\Controllers\Controller;
 
 class SystemController extends Controller
 {
-    public function activateLicense(Request $request)
-    {
-        $request->validate([
-            'license' => 'required'
-        ]);
-
-        $res = AppLoader::createApp($request['license'], false);
-
-        if ($res == 'SUCCESS') {
-            $latest_version = '1.2.7';
-            $this->updateSystemVersion($latest_version);
-            $this->updateThemeVersion($latest_version);
-            return redirect()->route('core.admin.welcome');
-        }
-
-        $latest_version = '1.2.7';
-            $this->updateSystemVersion($latest_version);
-            $this->updateThemeVersion($latest_version);
-            return redirect()->route('core.admin.welcome');
-    }
-
     /**
      * Will clear system  cache
      */
@@ -91,15 +69,6 @@ class SystemController extends Controller
                 'message' => translate('Site Map Generating Failed')
             ], 500);
         }
-    }
-
-    public function storePurchaseKey(Request $request)
-    {
-        $request->validate([
-            'license' => 'required'
-        ]);
-
-        return  AppLoader::validateApp($request['license']);
     }
 
     /**

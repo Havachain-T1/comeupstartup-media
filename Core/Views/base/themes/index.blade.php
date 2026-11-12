@@ -110,30 +110,6 @@
     </div>
     <!-- Delete Modal-->
 
-    <!-- Purchase Key Modal-->
-    <div id="verify-purchase-modal" class="verify-purchase-modal modal fade show" aria-modal="true" role="dialog">
-        <div class="modal-dialog modal-md modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title h6">{{ translate('Active Confirmation') }}</h4>
-                </div>
-                <div class="modal-body">
-                    <form method="POST" action="{{ route('core.theme.purchase.verify') }}">
-                        @csrf
-                        <input type="hidden" id="theme-location" name="theme-location">
-                        <input type="hidden" id="license_api" name="license_api">
-                        <label for="purchase_key" class="black bold font-14 mb-1">{{ translate('Purchase Key') }}</label>
-                        <input type="text" id="purchase_key" name="purchase_key" class="form-control mb-2"
-                            placeholder="{{ translate('Give Purchase Key To Activate This Theme') }}">
-                        <button type="button" class="btn long mt-2 btn-danger"
-                            data-dismiss="modal">{{ translate('Cancel') }}</button>
-                        <button type="submit" class="btn long mt-2">{{ translate('Activate') }}</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Purchase Key Modal-->
 @endsection
 @section('custom_scripts')
     <script>
@@ -144,14 +120,8 @@
             "use strict";
             e.preventDefault();
             let theme = $(this).data('theme');
-            if (theme.license && !theme.is_verified) {
-                $("#theme-location").val(theme.location);
-                $("#license_api").val(theme.license_api);
-                $('#verify-purchase-modal').modal('show');
-            } else {
-                $("#active-theme-id").val(theme.id);
-                $('#active-modal').modal('show');
-            }
+            $("#active-theme-id").val(theme.id);
+            $('#active-modal').modal('show');
         });
 
         /**

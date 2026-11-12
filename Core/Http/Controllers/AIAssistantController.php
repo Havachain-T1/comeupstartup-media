@@ -19,7 +19,6 @@ class AIAssistantController extends Controller
 
     function __construct()
     {
-        $this->middleware(['the' . 'melo' . 'oks', 'li' . 'cen' . 'se']);
         $api_config = DB::table('open_ai_settings')->first();
 
         $this->api_key = $api_config->api_key;

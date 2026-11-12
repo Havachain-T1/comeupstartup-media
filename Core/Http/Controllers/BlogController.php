@@ -29,7 +29,6 @@ class BlogController extends Controller
   {
     $this->language_repository = $language_repository;
     $this->blog_repository = $blog_repository;
-    $this->middleware(['the' . 'melo' . 'oks', 'li' . 'cen' . 'se']);
   }
 
   /**
