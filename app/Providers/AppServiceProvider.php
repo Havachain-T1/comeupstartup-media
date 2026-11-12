@@ -14,6 +14,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->app->bind(\App\Services\Search\Contracts\SearchEngine::class, \App\Services\Search\DatabaseSearchEngine::class);
+
         //
     }
 

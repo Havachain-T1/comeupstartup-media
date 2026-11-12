@@ -97,7 +97,7 @@
         // Search Submit
         function submitSearch(text) {
             let url = '{{ route('theme.newslooks.blog.blogBySearch', 'searchText') }}';
-            url = url.replace("searchText", text);
+            url = url.replace("searchText", encodeURIComponent(text.replace(/\//g, ' ').trim()));
             window.location.href = url;
         }
 

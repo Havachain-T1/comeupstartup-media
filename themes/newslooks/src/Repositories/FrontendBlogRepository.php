@@ -97,11 +97,10 @@ class FrontendBlogRepository
         }
 
         if ($condition_type == 'search') {
-            return $blogs_query->where(function ($query) use ($condition_value) {
-                $query->where('name', 'like', '%' . $condition_value . '%')
-                    ->orWhere('visibility', 'like', '%' . $condition_value . '%')
-                    ->orWhere('content', 'like', '%' . $condition_value . '%');
-            })->orderBy('publish_at', 'desc');
+            $search = app(\App\Services\Search\SearchService::class);
+
+            return app(\App\Services\Search\Contracts\SearchEngine::class)
+                ->constrainArticles($blogs_query, $search->query((string) $condition_value));
         }
 
         if ($condition_type == 'author') {
