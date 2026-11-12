@@ -1,0 +1,9 @@
+{
+    "name": "NewsLooks",
+    "location": "newslooks",
+    "namespace": "Theme\\NewsLooks\\",
+    "version": "1.0",
+    "author": "Themelooks",
+    "url": "http://www.themelooks.com/",
+    "description": "NewsLooks Default Theme"
+}

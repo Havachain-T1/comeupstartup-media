@@ -1,0 +1,29 @@
+/* ************************
+   02.9: Pagination
+   ********************* */
+//Pagination
+.pagination {
+    li {
+        &:not(:last-child) {
+            margin-right: 10px;
+        }
+        a, span {
+            width: 40px;
+            height: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid $c2;
+            border-radius: 50%;
+            @extend %title-font;
+            @extend %c2;
+            @extend %trans3;
+            &.current,
+            &:hover {
+                color: #ffffff;
+                border-color: $c2;
+                @extend %c2-bg;
+            }
+        }
+    }
+}

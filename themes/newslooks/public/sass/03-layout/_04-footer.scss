@@ -1,0 +1,63 @@
+/* ************************
+   03.4: Footer
+   ********************* */
+.footer {
+    &:not(.bg-white) {
+        *:not(path) {
+            color: var(--color-white);
+        }
+        .theme-input-group.style--two > input {
+            background-color: rgba($white, 0.09);
+        }
+        .border-top {
+            border-top: 1px solid rgba($color: $white, $alpha: 0.1);
+        }
+    }
+    .widget {
+        margin-bottom: 30px;
+    }
+    .newsletter-form {
+        @include customMin(992) {
+            max-width: 444px;
+        }
+    }
+    .border-top {
+        border-top: 1px solid rgba($color: $black_c, $alpha: 0.1);
+    }
+}
+
+.copyright-text {
+    font-size: 14px;
+}
+
+.footer-nav {
+    font-size: 14px;
+    li {
+        &:not(:last-child) {
+            margin-right: 20px;
+        }
+    }
+    &.style {
+        &--two {
+            li {
+                &:not(:last-child) {
+                    margin-right: 24px;
+                    font-size: 13px;
+                    &::after {
+                        content: '/';
+                        display: inline-block;
+                        margin-left: 24px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.footer-description {
+    padding-top: 45px;
+    max-width: 800px;
+    font-size: 18px;
+    line-height: 28px;
+    padding-bottom: 30px;
+}

@@ -1,0 +1,303 @@
+/* ************************
+   01.3: Color
+   ********************* */
+@include colors(var(--color-one), c1);
+@include colors(var(--color-two), c2);
+@include colors(var(--color-three), c3);
+@include colors(var(--color-four), c4);
+@include colors(var(--color-five), c5);
+@include colors(var(--color-six), c6);
+@include colors(var(--color-seven), c7);
+@include colors(var(--color-eight), c8);
+
+// Colors
+.c1 {
+    color: var(--color-one) !important;
+}
+.c2 {
+    color: var(--color-two) !important;
+}
+.c3 {
+    color: var(--color-three) !important;
+}
+.c4 {
+    color: var(--color-four) !important;
+}
+.c5 {
+    color: var(--color-five) !important;
+}
+.c6 {
+    color: var(--color-six) !important;
+}
+.c7 {
+    color: var(--color-seven) !important;
+}
+.c8 {
+    color: var(--color-eight) !important;
+}
+.c9 {
+    color: var(--color-nine) !important;
+}
+.text-title {
+    color: var(--color-title) !important;
+}
+.text-title-two {
+    color: var(--color-title-two) !important;
+}
+.text-light {
+    color: var(--color-light) !important;
+}
+.text-white {
+    color: #fff !important;
+}
+
+.text-color {
+    color: var(--color-text);
+}
+
+// BG Colors
+.c1-bg {
+    background-color: var(--color-one) !important;
+}
+.c2-bg {
+    background-color: var(--color-two) !important;
+}
+.c3-bg {
+    background-color: var(--color-three) !important;
+}
+.c4-bg {
+    background-color: var(--color-four) !important;
+}
+.c5-bg {
+    background-color: var(--color-five) !important;
+}
+.c6-bg {
+    background-color: var(--color-six) !important;
+}
+.c7-bg {
+    background-color: var(--color-seven) !important;
+}
+.c8-bg {
+    background-color: var(--color-eight) !important;
+}
+.c9-bg {
+    background-color: var(--color-nine) !important;
+}
+.bg-dark {
+    background-color: var(--color-title) !important;
+}
+.bg-dark-one {
+    background-color: var(--color-dark-one) !important;
+}
+.bg-dark-two {
+    background-color: var(--color-dark-two) !important;
+}
+.bg-dark-two-o20 {
+    background-color: rgba($dark-two, 0.20) !important;
+}
+.bg-dark-three {
+    background-color: var(--color-dark-three) !important;
+}
+.bg-title-two {
+    background-color: var(--color-title-two) !important;
+}
+.bg-white {
+    background-color: var(--color-white) !important;
+}
+.bg-black,
+.black-bg {
+    background-color: var(--color-black) !important;
+}
+.bg-transparent {
+    background-color: transparent !important;
+}
+.bg-light {
+    background-color: #f7f7f7 !important;
+}
+.bg-light--two {
+    background-color: rgba(#123D6C, 0.05);
+}
+.bg-white-light {
+    background-color: rgba($color: $white, $alpha: 0.09) !important;
+}
+.bg-off-white {
+    background-color: $offWhite !important;
+}
+//Social Media BG
+.bg-fb {
+    background-color: $fb-bg !important;
+}
+.bg-tw {
+    background-color: $tw-bg !important;
+}
+.bg-yt {
+    background-color: $yt-bg !important;
+}
+.bg-be {
+    background-color: $be-bg !important;
+}
+.bg-dr {
+    background-color: $dr-bg !important;
+}
+.bg-sc {
+    background-color: $sc-bg !important;
+}
+.bg-vk {
+    background-color: $vk-bg !important;
+}
+.bg-in {
+    background-color: $in-bg !important;
+}
+
+// Border Colors
+.c1-bo {
+    border-color: var(--color-one) !important;
+}
+.c2-bo {
+    border-color: var(--color-two) !important;
+}
+.c3-bo {
+    border-color: var(--color-three) !important;
+}
+.c4-bo {
+    border-color: var(--color-four) !important;
+}
+.c5-bo {
+    border-color: var(--color-five) !important;
+}
+.c6-bo {
+    border-color: var(--color-six) !important;
+}
+.c7-bo {
+    border-color: var(--color-seven) !important;
+}
+.c8-bo {
+    border-color: var(--color-eight) !important;
+}
+.c9-bo {
+    border-color: var(--color-nine) !important;
+}
+.transparent-bo {
+    border-color: transparent !important;
+}
+
+//Color Transformation
+.text-white {
+    a {
+        color: var(--color-white);
+    }
+}
+
+.title-color-two {
+    a {
+        color: var(--color-title-two);
+    }
+}
+
+.title-color-two {
+    color: var(--color-title-two) !important;
+}
+.title-color-two-hover:hover {
+    color: var(--color-title-two) !important;
+}
+
+.c2-hover {
+    a:not(.btn):not(.cat-btn) {
+        &:hover {
+            color: var(--color-two) !important;
+        }
+    }
+}
+.c3-hover {
+    a:not(.btn):not(.cat-btn) {
+        &:hover {
+            color: var(--color-three) !important;
+        }
+    }
+}
+.c4-hover {
+    a:not(.btn):not(.cat-btn) {
+        &:hover {
+            color: var(--color-four) !important;
+        }
+    }
+}
+.c5-hover {
+    a:not(.btn):not(.cat-btn) {
+        &:hover {
+            color: var(--color-five) !important;
+        }
+    }
+}
+.c6-hover {
+    a:not(.btn):not(.cat-btn) {
+        &:hover {
+            color: var(--color-six) !important;
+        }
+    }
+}
+.c7-hover {
+    a:not(.btn):not(.cat-btn) {
+        &:hover {
+            color: var(--color-seven) !important;
+        }
+    }
+}
+.c8-hover {
+    a:not(.btn):not(.cat-btn) {
+        &:hover {
+            color: var(--color-eight) !important;
+        }
+    }
+}
+.c9-hover {
+    a:not(.btn):not(.cat-btn) {
+        &:hover {
+            color: var(--color-nine) !important;
+        }
+    }
+}
+
+a.c1-hover:hover {
+    color: var(--color-one) !important;
+}
+a.c2-hover:hover {
+    color: var(--color-two) !important;
+}
+a.c3-hover:hover {
+    color: var(--color-three) !important;
+}
+a.c4-hover:hover {
+    color: var(--color-four) !important;
+}
+a.c5-hover:hover {
+    color: var(--color-five) !important;
+}
+.text-white-hover:hover {
+    color: var(--color-white) !important;
+}
+a.c1-hover-bg:hover {
+    background-color: var(--color-one) !important;
+}
+a.c3-hover-bg:hover {
+    background-color: var(--color-three) !important;
+}
+a.c4-hover-bg:hover {
+    background-color: var(--color-four) !important;
+}
+a.c5-hover-bg:hover {
+    background-color: var(--color-five) !important;
+}
+
+.bg-black {
+    .widget.widget_social_media_info ul li:nth-of-type(even)::after {
+        background-color: var(--color-black);
+    }
+    .widget.widget_social_media_info ul li:nth-of-type(odd)::after {
+        background-color: var(--color-black);
+    }
+}
+
+.bg-category {
+    background-color: rgba(#EBEBE2, 0.7);
+}

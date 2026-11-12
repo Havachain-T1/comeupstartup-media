@@ -1,0 +1,91 @@
+/* ************************
+   02.8: Titles
+   ********************* */
+.section-title {
+    &.has-bg-shape {
+        text-transform: uppercase;
+        h5 {
+            position: relative;
+            z-index: 1;
+            color: var(--color-one);
+            padding-left: 4px;
+            &:after {
+                @extend %bg-shape-effect;
+            }
+        }
+        &.shape {
+            &--two {
+                h5 {
+                    color: var(--color-two);
+                    &:after {
+                        @extend %shape-style-two;
+                    }
+                }
+            }
+            &--end {
+                h5 {
+                    &:after {
+                        left: auto;
+                        right: 0;
+                        clip-path: polygon(0 0, 100% 0%, 100% 100%, 50% 100%);
+                    }
+                }
+            }
+            &-white {
+                h5 {
+                    &:after {
+                        background-color: var(--color-white);
+                    }
+                }
+            }
+        }
+        &.shape-bg {
+            &--one {
+                h5 {
+                    &:after {
+                        background-color: var(--color-one);
+                    }
+                }
+            }
+            &--two {
+                h5 {
+                    &:after {
+                        background-color: var(--color-two);
+                    }
+                }
+            }
+            &--five {
+                h5 {
+                    &:after {
+                        background-color: var(--color-five);
+                    }
+                }
+            }
+        }
+    }
+    &.has-left-shape {
+        h5 {
+            position: relative;
+            z-index: 1;
+            color: var(--color-one);
+            padding-left: 13px;
+            &:after {
+                @extend %left-shape-effect;
+            }
+        }
+    }
+}
+
+// Newsletter
+.newsletter-title {
+    h3 {
+        color: var(--color-white);
+        $lh: 35/24;
+        line-height: $lh;
+        margin-bottom: 10px;
+    }
+    p {
+        color: var(--color-white);
+        font-size: 14px;
+    }
+}

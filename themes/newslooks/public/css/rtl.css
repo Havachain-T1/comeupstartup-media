@@ -1,0 +1,407 @@
+body.rtl-mode {
+  direction: rtl !important;
+  text-align: initial;
+}
+
+body.rtl-mode .header-nav li:not(:last-child) {
+  margin-left: 18px;
+  margin-right: 0px;
+}
+
+body.rtl-mode .header-top-right > *:not(:last-child) {
+  margin: 0px 0px 0px 22px;
+  padding: 0px 0px 0px 22px;
+}
+
+body.rtl-mode .header-top-right > *:not(:last-child)::before {
+  height: 16px;
+  width: 1px;
+  background-color: #e0dede;
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  content: "";
+}
+
+body.rtl-mode .header-top-right > *:not(:last-child)::after {
+  content: none;
+}
+
+body.rtl-mode .dropdown .dropdown-button svg {
+  margin-left: 5px;
+  margin-right: 0px;
+  top: 0px;
+}
+
+body.rtl-mode .list-has-separator > .nav > li:not(:last-child) {
+  margin: 0px 0px 0px 30px;
+  padding: 0px 0px 0px 30px;
+}
+
+body.rtl-mode .list-has-separator > .nav > li:not(:last-child) > a:before {
+  right: unset;
+  left: -30px;
+}
+
+body.rtl-mode .search-text {
+  padding-right: 20px;
+}
+
+body.rtl-mode .horizontal-menu .nav {
+  text-align: right;
+}
+
+body.rtl-mode .horizontal-menu > .nav li .submenu li:hover > ul {
+  left: unset;
+  right: 100%;
+}
+
+body.rtl-mode .horizontal-menu > .nav .menu-item-has-children a svg {
+  transform: rotateY(180deg);
+}
+
+body.rtl-mode .widget.widget-socials li:not(:last-child) {
+  margin-right: unset;
+  margin-left: 5px;
+}
+
+@media (min-width: 576px) {
+  body.rtl-mode .text-sm-left {
+    text-align: right !important;
+  }
+
+  body.rtl-mode .text-sm-right {
+    text-align: left !important;
+  }
+}
+
+body.rtl-mode .news-updates--list {
+  direction: ltr;
+}
+
+body.rtl-mode .post--item.bg-img-style .post--meta li:not(:last-child) {
+  margin-right: unset;
+  margin-left: 15px;
+}
+
+body.rtl-mode .has-bg-shape {
+  text-align: right;
+}
+
+body.rtl-mode .section-title.has-bg-shape.shape--two h2:after {
+  left: unset;
+  right: 0;
+  transform: rotateY(180deg);
+}
+
+body.rtl-mode .square-btn svg {
+  transform: rotateY(180deg);
+}
+
+body.rtl-mode .post--meta li:not(:last-child) {
+  margin-right: unset;
+}
+
+body.rtl-mode .post--item.media.layout-3-small-post .post--img,
+body.rtl-mode .grid-style--four .post--item.media .post--img,
+body.rtl-mode .post-advance-layout-2 .post--item.media .post--img {
+  margin-right: unset;
+  margin-left: 20px;
+}
+
+body.rtl-mode .widget_social_media_info .nav {
+  direction: ltr;
+}
+
+body.rtl-mode .post--tab li:not(:last-child) {
+  margin-right: 0px;
+  margin-left: 25px;
+}
+
+body.rtl-mode .widget_recent_comments .single-comment .comment-author-img {
+  left: unset;
+  right: 20px;
+}
+
+body.rtl-mode .widget_recent_comments .single-comment .quote-icon {
+  right: unset;
+  left: 20px;
+}
+
+body.rtl-mode .newsletter-form input {
+  padding-right: 20px;
+}
+
+body.rtl-mode .widget.widget_about li {
+  padding-left: 0px;
+  padding-right: 35px;
+}
+
+body.rtl-mode .widget.widget_about li .svg {
+  right: 0px;
+}
+
+body.rtl-mode .footer-nav li:not(:last-child) {
+  margin-left: 20px;
+  margin-right: 0px;
+}
+
+body.rtl-mode .widget-voting .voting-label {
+  text-align: left;
+}
+
+body.rtl-mode .breadcrumb li:not(:last-child)::before {
+  width: 9px;
+  height: 7px;
+  position: absolute;
+  background-image: url(../img/icon/pg-arrow.svg);
+  content: "";
+  right: unset;
+  left: -5px;
+  top: 5px;
+  transform: rotateY(180deg);
+}
+
+body.rtl-mode .breadcrumb li:not(:last-child)::after {
+  content: none;
+}
+
+body.rtl-mode .breadcrumb li:not(:last-child) {
+  margin-left: 13px;
+  margin-right: 0px;
+  padding-left: 14px;
+  padding-right: 0px;
+}
+
+body.rtl-mode .post--meta {
+  padding: 0px;
+}
+
+body.rtl-mode .pagination li:not(:last-child) {
+  margin-right: 0px;
+  margin-left: 10px;
+}
+
+body.rtl-mode .pagination li svg {
+  transform: rotateY(180deg);
+}
+
+body.rtl-mode .post-title--wrap .post--meta li:not(:last-child) {
+  margin-left: 15px;
+}
+
+body.rtl-mode .post-author .author_thumb {
+  margin-right: 0px;
+  margin-left: 20px;
+}
+
+body.rtl-mode .post-social > a:not(:last-child),
+body.rtl-mode .post-share > a:not(:last-child),
+body.rtl-mode .post-share > span:not(:last-child) {
+  margin-right: 0px;
+  margin-left: 15px;
+}
+
+body.rtl-mode .post--cats li:not(:last-child) {
+  margin-right: 0px;
+  margin-left: 5px;
+}
+
+body.rtl-mode .feature-img--meta li:not(:last-child) {
+  margin-right: 0px;
+  margin-left: 20px;
+  padding-right: 0px;
+  padding-left: 20px;
+}
+
+body.rtl-mode .feature-img--meta li:not(:last-child)::before {
+  width: 1px;
+  height: 15px;
+  position: absolute;
+  left: 0px;
+  top: 50%;
+  content: "";
+  background-color: #d5d5d5;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+body.rtl-mode .feature-img--meta li:not(:last-child)::after {
+  content: none;
+}
+
+body.rtl-mode .feature-img--wrap.meta-on--img .feature-img--meta {
+  left: unset;
+  right: 0;
+}
+
+body.rtl-mode .auth-card .login-btn {
+  margin-right: 0px;
+  margin-left: 20px;
+}
+
+body.rtl-mode .auth-card .register-btn {
+  margin-right: 0px;
+  margin-left: 20px;
+}
+
+body.rtl-mode .single-comment .comment-author-image {
+  margin-right: 0px;
+  margin-left: 10px;
+}
+
+body.rtl-mode
+  .comments-area
+  .comment
+  .single-comment
+  .comment-content
+  .author_name {
+  margin-right: 0px;
+  margin-left: 10px;
+}
+
+body.rtl-mode ul.nav {
+  padding: 0px;
+}
+
+@media (min-width: 768px) {
+  body.rtl-mode .text-md-left {
+    text-align: right !important;
+  }
+}
+
+body.rtl-mode .dropdown .dropdown-list {
+  left: 0;
+  right: 0;
+}
+
+body.rtl-mode .vertical-menu ul li .submenu-button {
+  left: 5px;
+  right: unset;
+}
+
+body.rtl-mode .vertical-menu ul ul {
+  padding-left: unset;
+  padding-right: 30px;
+}
+
+body.rtl-mode #post_recent_widget .post--img,
+body.rtl-mode .post--item.img-circle .post--img {
+  margin-right: unset;
+  margin-left: 20px;
+}
+
+body.rtl-mode .post-navigation .nav-next .post--title.text-right {
+  text-align: left !important;
+}
+
+body.rtl-mode .widget.widget_post_categories.border-style li::after {
+  margin-left: 60px;
+}
+
+@media (min-width: 768px) {
+  body.rtl-mode .post--item .post--content.ml-md-30 {
+    margin-left: unset !important;
+    margin-right: 30px;
+  }
+}
+
+@media only screen and (min-width: 767px) {
+  body.rtl-mode .post--item.style--two .post--content {
+    margin-left: unset !important;
+    margin-right: -50px;
+  }
+}
+
+body.rtl-mode .post-navigation .nav-previous .nav-title h5 {
+  margin-left: unset;
+  margin-right: 10px;
+}
+
+body.rtl-mode .post-navigation .nav-next .nav-title h5 {
+  margin-right: unset;
+  margin-left: 10px;
+}
+
+body.rtl-mode .widget.widget_social_media_info ul li {
+  direction: rtl;
+}
+
+body.rtl-mode .widget.widget_social_media_info .social_icon:before {
+  position: absolute;
+  left: -16px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: 1px;
+  height: 20px;
+  background-color: var(--color-white);
+  opacity: 0.5;
+  content: "";
+}
+
+body.rtl-mode .widget.widget_social_media_info .social_icon:after {
+  content: unset;
+}
+
+body.rtl-mode .widget.widget_social_media_info ul li .media-body {
+  margin-left: unset;
+  margin-right: 32px;
+  text-align: right;
+}
+
+body.rtl-mode .post-filters li:not(:first-child) {
+  border-left: unset;
+  border-right: 1px solid #ddd;
+}
+
+body.rtl-mode .post--item.video-button-middle .play-button {
+  right: unset;
+  left: 40px;
+}
+
+body.rtl-mode .post--item.video-button-middle .video-post-button {
+  left: 50%;
+}
+
+body.rtl-mode .theme-input-group button {
+  border-top-right-radius: unset;
+  border-bottom-right-radius: unset;
+  border-top-left-radius: inherit;
+  border-bottom-left-radius: inherit;
+}
+
+body.rtl-mode .video--playlist--header span {
+  margin-left: unset;
+  margin-left: 10px;
+}
+
+body.rtl-mode #post-list-content .post--item.category-on-image .post--category {
+  left: unset;
+  right: 20px;
+}
+
+body.rtl-mode .comment-reply-links a:not(:last-child) {
+  margin-right: unset;
+  padding-left: unset;
+  margin-left: 10px;
+  padding-left: 10px;
+}
+
+body.rtl-mode .breadcrumb {
+  padding: 8.5px 25px !important;
+}
+
+body.rtl-mode .feature-img--wrap.meta-on--img .feature-img--meta {
+  padding: 15px 10px 15px 20px;
+}
+
+body.rtl-mode .aside {
+  padding-left: unset;
+  padding-right: 20px;
+}

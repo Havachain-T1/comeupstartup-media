@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="330" height="351" viewBox="0 0 330 351">
+  <defs>
+    <radialGradient id="radial-gradient" cx="0.5" cy="0.5" r="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fa9d85"/>
+      <stop offset="1" stop-color="#f64a1d"/>
+    </radialGradient>
+  </defs>
+  <rect id="Backrounty" width="330" height="351" rx="5" fill="url(#radial-gradient)"/>
+</svg>

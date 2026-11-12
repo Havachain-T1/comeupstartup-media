@@ -1,0 +1,147 @@
+//Grid
+$enable-grid-classes: true !default;
+
+// Grid breakpoints
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+) !default;
+
+// Grid columns
+$grid-columns: 12 !default;
+$grid-gutter-width: 30px !default;
+
+// Grid containers
+$container-max-widths: (
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1140px,
+) !default;
+
+//Positions
+$positions: static, relative, absolute, fixed, sticky !default;
+
+//Displays
+$displays: none, inline, inline-block, block, table, table-row, table-cell, flex,
+    inline-flex !default;
+
+//Sizes
+$sizes: () !default;
+$sizes: map-merge(
+    (
+        25: 25%,
+        50: 50%,
+        75: 75%,
+        100: 100%,
+        auto: auto,
+    ),
+    $sizes
+);
+
+// Spacing
+$spacer: 5px !default;
+$spacers: () !default;
+
+// stylelint-disable-next-line scss/dollar-variable-default
+$spacers: map-merge(
+    (
+        0: 0,
+        5: $spacer,
+        10: (
+            $spacer * 2,
+        ),
+        15: (
+            $spacer * 3,
+        ),
+        20: (
+            $spacer * 4,
+        ),
+        25: (
+            $spacer * 5,
+        ),
+        30: (
+            $spacer * 6,
+        ),
+        50: (
+            $spacer * 10,
+        ),
+    ),
+    $spacers
+);
+
+$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+    'Liberation Mono', 'Courier New', monospace !default;
+
+// Z-index master list
+$zindex-dropdown: 1000 !default;
+$zindex-sticky: 1020 !default;
+$zindex-fixed: 1030 !default;
+$zindex-modal-backdrop: 1040 !default;
+$zindex-modal: 1050 !default;
+$zindex-popover: 1060 !default;
+$zindex-tooltip: 1070 !default;
+
+// Colors
+$c1: #f64a1d;
+$c2: #44b947;
+$c3: #f8ae32;
+$c4: #fea900;
+$c5: #ffcc2f;
+$c6: #2c7bfa;
+$c7: #6130ee;
+$c8: #f65576;
+$c9: #f66e21;
+$title-color: #0a2644;
+$title-color-two: #2c3b4b;
+$dark-one: #123d6c;
+$dark-two: #0a0818;
+$dark-three: #040404;
+$text-color: #2c2f34;
+$text-color-light: #969696;
+$border-color: rgba($title-color, 0.09);
+$white: #ffffff;
+$black_c: #000000;
+$body_bg: #ffffff;
+$offWhite: #fffef7;
+
+// social media bg
+$fb-bg: #4282fa;
+$tw-bg: #44bff6;
+$yt-bg: #ff0000;
+$be-bg: #2c7bfa;
+$dr-bg: #f9679d;
+$sc-bg: #ff8033;
+$vk-bg: #6130ee;
+$in-bg: #e33777;
+
+// Fonts
+$heading_font: 'Source Sans Pro', sans-serif;
+$body_font: 'Roboto', sans-serif;
+
+// Font Weight
+$thin: 100;
+$extra-light: 200;
+$light: 300;
+$regular: 400;
+$medium: 500;
+$semi-bold: 600;
+$bold: 700;
+$extra-bold: 800;
+$black: 900;
+
+// Font Size
+$base-font-size: 16px;
+$h1_font_size: 40px;
+$h2_font_size: 30px;
+$h3_font_size: 24px;
+$h4_font_size: 18px;
+$h5_font_size: 16px;
+$h6_font_size: 14px;
+
+// Line Height
+$base-line-height: 26 / 16;
+$title-line-height: 30 / 24;

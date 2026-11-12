@@ -1,0 +1,38 @@
+/* ************************
+   02.3: Preloader
+   ********************* */
+.preloader {
+    background-color: var(--color-one);
+    display: flex;
+    z-index: 99999;
+    &-inner {
+        width: 40px;
+        height: 40px;
+        position: relative;
+        color: $white;
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: currentColor;
+            border-radius: 50%;
+            -webkit-animation: preloaderScaleout 1s infinite ease-in-out;
+            animation: preloaderScaleout 1s infinite ease-in-out;
+        }
+    }
+    &.bg-white,
+    &.bg-light {
+        .preloader-inner {
+            color: var(--color-one);
+        }
+    }
+}
+
+.post--items {
+    .preloader {
+        display: none;
+    }
+}

@@ -1,0 +1,106 @@
+/* ************************
+   02.15: Slider
+   ********************* */
+.video-slider {
+    .swiper-slide {
+        overflow: hidden;
+        max-width: 930px;
+        width: 100%;
+        @include customMax(1199) {
+            max-width: 830px;
+        }
+        .post--item {
+            width: 100%;
+            border-radius: 20px;
+        }
+    }
+}
+
+.geo-slider {
+    .post--item {
+        min-height: 350px;
+        .post--img img {
+            min-height: 350px;
+        }
+    }
+    .slider-nav {
+        margin-top: 50px;
+        @include customMin(1200) {
+            margin-top: 0;
+            position: absolute;
+            right: -5%;
+            top: 50%;
+            transform: rotate(90deg) translateY(-50%);
+            z-index: 99;
+        }
+        @include customMin(1300) {
+            right: 0;
+        }
+        @include customMin(1500) {
+            right: 5%;
+        }
+    }
+}
+
+/* Pagination */
+.custom-pagination {
+    line-height: 0;
+    .swiper-pagination-bullet {
+        width: 5px;
+        height: 5px;
+        background-color: var(--color-one);
+        border-radius: 50px;
+        opacity: 1;
+        @extend %trans3;
+        &.swiper-pagination-bullet-active {
+            width: 25px;
+        }
+    }
+    &.style {
+        &--two {
+            span {
+                width: 7px;
+                height: 7px;
+                background-color: var(--color-white);
+                &.swiper-pagination-bullet-active {
+                    width: 7px;
+                    background-color: currentColor;
+                }
+            }
+        }
+    }
+}
+
+.slider-pagination {
+    display: flex;
+    align-items: center;
+    .swiper-pagination-bullet {
+        width: 35px;
+        height: 2px;
+        border-radius: 0;
+        margin: 0 2.5px;
+        background-color: var(--color-white);
+        opacity: 0.15;
+        @extend %trans3;
+        &.swiper-pagination-bullet-active {
+            height: 4px;
+            opacity: 1;
+            background-color: currentColor;
+        }
+    }
+}
+
+/* Navigation */
+.slider-button {
+    line-height: 1;
+    color: var(--color-white);
+    cursor: pointer;
+    @extend %trans3;
+    &:hover {
+        color: var(--color-three);
+    }
+    &.swiper-button-disabled {
+        color: var(--color-white);
+        opacity: 0.5;
+    }
+}

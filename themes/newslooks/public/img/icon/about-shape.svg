@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 325 315" preserveAspectRatio="xMinYMin slice">
+<defs>
+    <clipPath id="clip-path">
+        <rect id="Rectangle_4473" data-name="Rectangle 4473" width="325"
+            height="315" rx="5" transform="translate(10496 -12258)" fill="#fff" />
+    </clipPath>
+</defs>
+<g id="Mask_Group_736" data-name="Mask Group 736"
+    transform="translate(-10496 12258)" clip-path="url(#clip-path)">
+    <path id="Exclusion_1" data-name="Exclusion 1"
+        d="M325,315H5l320-70a5.006,5.006,0,0,0,5-4.875L330,310A5.006,5.006,0,0,1,325,315Z"
+        transform="translate(10491 -12258)"  fill="currentColor"/>
+</g>
+</svg>

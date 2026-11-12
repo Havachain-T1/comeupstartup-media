@@ -1,0 +1,335 @@
+/* ************************
+   02.1: Helper Classes
+   ********************* */
+//Fonts
+.title-font {
+    @extend %title-font;
+}
+.body-font {
+    @extend %body-font;
+}
+
+//BG
+.bg-cover {
+    background-size: cover;
+    background-position: center;
+}
+
+.bg-overlay {
+    position: relative;
+    z-index: 1;
+    &:after {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        content: '';
+        opacity: 0.5;
+        z-index: -1;
+        @extend %trans3;
+        border-radius: inherit;
+    }
+}
+
+.bg-overlay2 {
+    position: relative;
+    z-index: 1;
+    &:after {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.5;
+        content: '';
+        z-index: 0;
+        @extend %trans3;
+        border-radius: inherit;
+        background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(18,61,108,0.5) 50%, rgba(18,61,108,1) 100%);
+        background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(18,61,108,0.5) 50%,rgba(18,61,108,1) 100%);
+        background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(18,61,108,0.5) 50%,rgba(18,61,108,1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#123d6c',GradientType=0 );
+    }
+}
+
+.gaming-wrap-bg {
+    background-size: auto;
+    background-position: top center;
+    background-repeat: no-repeat;
+}
+
+.food-wrapper-inner {
+    background-color: #fffef7;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.auto-wrapper {
+    &:after {
+        opacity: 0.66;
+    }
+}
+
+//Overflow
+.overflow-hidden {
+    overflow: hidden;
+}
+
+//Nav
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+//List
+.list-unstyled {
+    @extend %list-unstyled;
+}
+
+ul.row {
+    list-style: none;
+}
+
+// Gutters
+@include customMin(992) {
+    .gutter-50 {
+        margin-left: -25px;
+        margin-right: -25px;
+    }
+    .gutter-50 > * {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+}
+
+//Font Size
+.fz-12 {
+    font-size: 12px !important;
+}
+.fz-13 {
+    font-size: 13px !important;
+}
+.fz-14 {
+    font-size: 14px !important;
+}
+
+//Font Weight
+.fw-bold {
+    font-weight: 700 !important;
+}
+.fw-semibold {
+    font-weight: 600 !important;
+}
+.fw-medium {
+    font-weight: 500 !important;
+}
+
+//Border Radius
+.radius-0 {
+    border-radius: 0 !important;
+}
+.radius-3 {
+    border-radius: 3px !important;
+}
+.radius-5 {
+    border-radius: 5px !important;
+}
+
+//Border
+.border-top {
+    border-top: 1px solid #dcd9c9;
+}
+.border-bottom {
+    border-bottom: 1px solid #dcd9c9;
+}
+.border-0 {
+    border-bottom: none !important;
+}
+
+//Custom Padding
+.newsletter-padding {
+    padding-top: 52px;
+    padding-bottom: 56px;
+}
+
+//Custom Margin
+.mt-3 {
+    margin-top: 3px !important;
+}
+.mb-3 {
+    margin-bottom: 3px !important;
+}
+
+.mb-18 {
+    margin-bottom: 18px !important;
+}
+
+.mb-40 {
+    margin-bottom: 40px !important;
+}
+
+.mt-45 {
+    margin-top: 45px !important;
+}
+
+.mb-45 {
+    margin-bottom: 45px !important;
+}
+
+//Max width
+.mw-160 {
+    max-width: 160px;
+}
+.mw-175 {
+    max-width: 175px;
+}
+
+.mw-920 {
+    max-width: 920px !important;
+}
+
+//Dropdown
+.dropdown {
+    position: relative;
+    font-size: 14px !important;
+    .dropdown-button {
+        display: inline-flex;
+        align-items: center;
+        svg {
+            width: 12px;
+            height: 12px;
+            @extend %trans3;
+            margin-right: 5px;
+            position: relative;
+            top: -1px;
+        }
+
+        &.open {
+            svg {
+                transform: rotate(90deg);
+            }
+        }
+        &:hover {
+            color: var(--title-color);
+        }
+    }
+    .dropdown-list {
+        position: absolute;
+        background-color: var(--color-white);
+        border-radius: 0 0 3px 3px;
+        box-shadow: 5px 5px 45px rgba(0, 0, 0, 0.1);
+        z-index: 9;
+        left: 0;
+        top: 120%;
+        @extend %list-unstyled;
+        min-width: 120px;
+        padding: 6px 14px;
+        display: none;
+        li {
+            position: relative;
+            padding: 8px 0;
+            &:not(:last-child) {
+                &:after {
+                    position: absolute;
+                    left: 0;
+                    top: 100%;
+                    height: 1px;
+                    width: 100%;
+                    content: '';
+                    background-color: #000;
+                    opacity: 0.05;
+                }
+            }
+        }
+    }
+}
+
+//Aside Sticky
+.aside-sticky {
+    position: sticky;
+    top: 100px;
+}
+
+//List
+.list {
+    @extend %list-unstyled;
+    li {
+       padding-left: 20px;
+       position: relative;
+       &:not(:last-child) {
+          margin-bottom: 10px;
+       }
+       &:after {
+          position: absolute;
+          left: 0;
+          top: 8px;
+          width: 9px;
+          height: 7px;
+          background-image: url(../img/theme/icon/list-arrow.svg);
+          content: "";
+       }
+    }
+ }
+
+ //Video btn
+ .video-btn {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: var(--color-white);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    &:after {
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        position: absolute;
+        content: "";
+        border-radius: 50%;
+        background-color: var(--color-white);
+        animation: ripple 2s linear infinite;
+    }
+    svg {
+        width: 35px;
+        height: 30px;
+        position: relative;
+        z-index: 2;
+        left: 1.5px;
+    }
+ }
+
+
+//Team
+.team {
+    margin-bottom: 37px;
+    &--img {
+        img {
+            width: 100%;
+            border-radius: 5px;
+        }
+    }
+    &--content {
+        padding-top: 25px;
+        h3 {
+            margin-bottom: 4px;
+        }
+        p {
+            color: #969696;
+        }
+    }
+}
+
+//Custom Container
+.custom-container {
+    max-width: 1600px;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+}

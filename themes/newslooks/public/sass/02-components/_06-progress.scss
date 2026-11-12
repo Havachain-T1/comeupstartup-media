@@ -1,0 +1,18 @@
+/* ************************
+   02.6: Progress
+   ********************* */
+
+   .progress-bar {
+      background-color: #EEF1F3;
+      border-radius: 50px;
+      height: 5px;
+      max-width: 100%;
+
+      .progress {
+         background-color: var(--color-two);
+         border-radius: 50px;
+         height: 5px;
+         width: 0;
+         transition: width 0.5s ease-in-out;
+      }
+   }

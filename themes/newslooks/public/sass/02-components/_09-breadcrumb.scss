@@ -1,0 +1,31 @@
+/* ************************
+   02.9: Breadcrumb
+   ********************* */
+
+   .breadcrumb {
+      background-color: rgba(#123D6C, 0.05);
+      padding: 8.5px 25px;
+      border-radius: 3px;
+      @include customMax(479) {
+         padding: 8.5px 16px;
+      }
+
+      li {
+         font-size: 13px;
+         line-height: 1.4;
+         &:not(:last-child) {
+            margin-right: 13px;
+            padding-right: 14px;
+            position: relative;
+            &:after {
+               width: 9px;
+               height: 7px;
+               position: absolute;
+               right: -5px;
+               background-image: url(../img/theme/icon/pg-arrow.svg);
+               content: "";
+               top: 5px;
+            }
+         }
+      }
+   }
