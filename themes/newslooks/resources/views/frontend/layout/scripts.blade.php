@@ -159,4 +159,5 @@
     };
 </script>
 <script src="{{ asset('public/js/search/live-search.js') }}" defer></script>
+<script src="{{ asset('public/js/ux/a11y-nav.js') }}" defer></script>
 @yield('custom-scripts')

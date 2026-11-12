@@ -9,8 +9,8 @@
             <!-- End Logo -->
 
             <!-- Close Offcanvas -->
-            <button class="close-offcanvas text-title bg-transparent p-0">
-                <img class="svg" src="{{ asset('themes/newslooks/public/') }}/img/icon/close.svg" alt="close">
+            <button type="button" class="close-offcanvas text-title bg-transparent p-0" aria-label="{{ translate('Close menu') }}">
+                <img class="svg" src="{{ asset('themes/newslooks/public/') }}/img/icon/close.svg" alt="" aria-hidden="true">
             </button>
             <!-- End Close Offcanvas -->
         </div>
@@ -38,7 +38,7 @@
 <!-- End Offcanvas Menu -->
 
 <!-- Offcanvas Trigger -->
-<button class="trigger-button d-lg-none {{ $text_color }}" data-toggle="offCanvas" data-target="offcanvasMenu" aria-label="mobile-menu">
+<button class="trigger-button d-lg-none {{ $text_color }}" data-toggle="offCanvas" data-target="offcanvasMenu" aria-label="{{ translate('Open menu') }}" aria-controls="offcanvasMenu" aria-expanded="false">
     <span></span>
     <span></span>
     <span></span>

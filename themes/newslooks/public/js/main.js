@@ -157,7 +157,7 @@ We may release future updates so it will overwrite this file. it's better and sa
     }
     $(window).on('load', function () {
         $('body').removeClass('overflow-hidden');
-        $('.preloader').fadeOut(1000);
+        $('.preloader').fadeOut(250);
     });
 
     /* 06: Contact Form
