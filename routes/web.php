@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController;
+use App\Http\Controllers\Search\SearchSuggestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,3 +15,11 @@ use App\Http\Controllers\TestController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/search-suggest', SearchSuggestController::class)
+    ->middleware('throttle:search')
+    ->name('search.suggest');
+require __DIR__ . '/company.php';
+require __DIR__ . '/commerce.php';
+require __DIR__ . '/brand_press.php';
+require __DIR__ . '/ai.php';

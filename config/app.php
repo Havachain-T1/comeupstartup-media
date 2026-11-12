@@ -216,7 +216,6 @@ return [
         Barryvdh\Debugbar\ServiceProvider::class,
         Chencha\Share\ShareServiceProvider::class,
 
-        ThemeLooks\SecureLooks\SecureLooksServiceProvider::class
     ],
 
     /*
@@ -240,7 +239,6 @@ return [
         'PDF' => Barryvdh\DomPDF\Facade::class,
         'Debugbar' => Barryvdh\Debugbar\Facades\Debugbar::class,
         'Share' => Chencha\Share\ShareFacade::class,
-        'AppLoader' => ThemeLooks\SecureLooks\SecureLooksFacade::class,
         'BlogHelper' => Theme\NewsLooks\Helpers\BlogHelper::class,
     ])->toArray()
 ];

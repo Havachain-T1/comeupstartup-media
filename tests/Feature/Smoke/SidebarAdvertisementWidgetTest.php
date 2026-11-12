@@ -7,8 +7,6 @@ use Core\Models\User;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Support\Facades\DB;
 use Tests\TestCase;
-use ThemeLooks\SecureLooks\Trait\StringHelper;
-use ThemeLooks\SecureLooks\Trait\ThemeLooks;
 
 /**
  * Regression: the sidebar Advertisement Widget form pre-selected the saved ad using its
@@ -25,9 +23,6 @@ class SidebarAdvertisementWidgetTest extends TestCase
     protected function setUp(): void
     {
         parent::setUp();
-
-        // The vendor (ThemeLooks) licence gate on widget routes needs a real purchase key; it is not under test here.
-        $this->withoutMiddleware([StringHelper::class, ThemeLooks::class]);
 
         $this->actingAs(User::findOrFail(1));
         $this->widgetId = DB::table('tl_widgets')->where('widget_name', 'Advertisement Widget')->value('id');

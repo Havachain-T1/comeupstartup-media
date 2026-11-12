@@ -1,0 +1,1 @@
+<span class="cus-badge cus-badge--{{ ['paid' => 'success', 'pending' => 'warning', 'refunded' => 'danger', 'partially_refunded' => 'warning', 'cancelled' => 'danger'][$status] ?? 'info' }}">{{ ucfirst(str_replace('_', ' ', $status)) }}</span>

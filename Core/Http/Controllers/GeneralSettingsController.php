@@ -15,7 +15,6 @@ class GeneralSettingsController extends Controller
     public function __construct(SettingsRepository $settings_repository)
     {
         $this->settings_repository = $settings_repository;
-        $this->middleware(['theme' . 'looks', 'licen'. 'se']);
     }
 
     /**

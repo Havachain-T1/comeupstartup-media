@@ -4,8 +4,6 @@
     "namespace": "Plugin\\NewslooksPageBuilder\\",
     "version": "1.0",
     "author": "Themelooks",
-    "url": "http:\/\/www.themelooks.com\/",
-    "description": "Page Builder Plugin for Newslooks",
-    "license": false,
-    "is_verified": false
+    "url": "http://www.themelooks.com/",
+    "description": "Page Builder Plugin for Newslooks"
 }

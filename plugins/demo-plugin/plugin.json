@@ -5,7 +5,5 @@
     "version": "1.0",
     "author": "Themelooks",
     "url": "http://www.themelooks.com/",
-    "description": "Demo Plugin for Newslooks",
-    "license" : false,
-    "license_api": ""
+    "description": "Demo Plugin for Newslooks"
 }

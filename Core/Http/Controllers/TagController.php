@@ -19,7 +19,6 @@ class TagController extends Controller
     {
         $this->language_repository = $language_repository;
         $this->blog_repository = $blog_repository;
-        $this->middleware(['them'.'eloo'.'ks', 'lic'.'en'.'se']);
     }
 
 

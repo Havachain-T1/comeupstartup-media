@@ -21,7 +21,6 @@ class UserController extends Controller
     public function __construct(UserRepository $user_repository)
     {
         $this->user_repository = $user_repository;
-        $this->middleware(['themelo' . 'oks', 'lice'. 'nse']);
     }
 
     /**

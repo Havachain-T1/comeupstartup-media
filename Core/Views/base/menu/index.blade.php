@@ -25,6 +25,7 @@
 @section('custom_css')
     <link href="{{ asset('/public/backend/assets/plugins/jquery-ui/jquery-ui.min.css') }}" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="{{ asset('/public/backend/assets/plugins/select2/select2.min.css') }}">
+@endsection
 
 @section('main_content')
     <div class="border-bottom2 pb-3 mb-4">

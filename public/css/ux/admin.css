@@ -1,0 +1,8 @@
+/* Admin UX baseline: visible focus, mobile-scrollable tables, consistent status badges. */
+a:focus-visible, button:focus-visible, .btn:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px solid #2563eb; outline-offset: 2px; }
+.card-body > .table, .card-body > table, .dataTables_wrapper { display: block; width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+@media (max-width: 767.98px) {
+    .card-body .table td, .card-body .table th { white-space: nowrap; }
+    .card-header { flex-wrap: wrap; gap: .5rem; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }

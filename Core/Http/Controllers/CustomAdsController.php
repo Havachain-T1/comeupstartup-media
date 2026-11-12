@@ -35,6 +35,8 @@ class CustomAdsController extends Controller
         $request->validate([
             'title' => 'required|max:250',
             'size' => 'required',
+            'start_date' => 'nullable|date',
+            'end_date' => 'nullable|date|after:start_date',
         ]);
 
         try {
@@ -43,6 +45,7 @@ class CustomAdsController extends Controller
             $ad->size = $request['size'];
             $ad->start_date = $request['start_date'];
             $ad->end_date = $request['end_date'];
+            $ad->open_ended = $request->boolean('open_ended');
 
             $ad->type = $request['ad_type'];
 
@@ -86,6 +89,8 @@ class CustomAdsController extends Controller
         $request->validate([
             'title' => 'required|max:250',
             'size' => 'required',
+            'start_date' => 'nullable|date',
+            'end_date' => 'nullable|date|after:start_date',
         ]);
 
         try {
@@ -94,6 +99,7 @@ class CustomAdsController extends Controller
             $ad->size = $request['size'];
             $ad->start_date = $request['start_date'];
             $ad->end_date = $request['end_date'];
+            $ad->open_ended = $request->boolean('open_ended');
 
             $ad->type = $request['ad_type'];
 

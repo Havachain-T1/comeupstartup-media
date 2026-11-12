@@ -9,7 +9,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
-use AppLoader;
 
 class ThemesController extends Controller
 {
@@ -59,7 +58,6 @@ class ThemesController extends Controller
             return redirect()->back();
         }
     }
-
 
     /**
      * Redirect to install theme page
@@ -143,28 +141,6 @@ class ThemesController extends Controller
             DB::rollBack();
             toastNotification('error', 'Theme installation failed', 'Failed');
             return redirect()->back();
-        }
-    }
-
-    /**
-     * Verify Purchase Code
-     */
-    public function verify(Request $request)
-    {
-        try {
-
-            $plugin = Themes::where('location', $request['theme-location'])->first();
-            $res = AppLoader::createApp($request['purchase_key'], false, $request['license_api'], $request['theme-location']);
-
-            if ($plugin && $res == 'SUCCESS') {
-                toastNotification('success', translate('Purchase Key Verified Successfully'), 'Success');
-                return redirect()->route('core.themes.index');
-            }
-
-            return $res;
-        } catch (\Exception $e) {
-            toastNotification('error', translate('Purchase Key Verifying Failed'), 'Failed');
-            return redirect()->route('core.themes.index');
         }
     }
 

@@ -12,10 +12,6 @@ use Core\Http\Requests\TestEmailRequest;
 class EmailController extends Controller
 {
 
-    public function __construct()
-    {
-        $this->middleware([ 'themelook' . 's', 'l'. 'icense']);
-    }
 
     /**
      * Will redirect smtp configuration page

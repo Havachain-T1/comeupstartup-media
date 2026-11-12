@@ -34,6 +34,8 @@
     <!-- ======= BEGIN GLOBAL MANDATORY STYLES ======= -->
     <link rel="stylesheet" href="{{ asset('/public/backend/assets/bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('/public/backend/assets/fonts/icofont/icofont.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/css/brand/x-brand.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/css/ux/admin.css') }}">
     <link rel="stylesheet"
         href="{{ asset('/public/backend/assets/plugins/perfect-scrollbar/perfect-scrollbar.min.css') }}">
     <!-- ======= END BEGIN GLOBAL MANDATORY STYLES ======= -->

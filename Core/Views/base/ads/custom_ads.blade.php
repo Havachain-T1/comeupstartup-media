@@ -44,8 +44,15 @@
                                         <td>{{ $ad->start_date }}</td>
                                         <td>{{ $ad->end_date }}</td>
                                         <td>
-                                            @if ($ad->status == 1)
-                                                <p class="badge badge-success">{{ translate('Active') }}</p>
+                                            @php($state = $ad->displayState())
+                                            @if ($state === 'live')
+                                                <p class="badge badge-success">{{ translate('Live') }}</p>
+                                            @elseif ($state === 'scheduled')
+                                                <p class="badge badge-info">{{ translate('Scheduled') }}</p>
+                                            @elseif ($state === 'expired')
+                                                <p class="badge badge-secondary">{{ translate('Expired') }}</p>
+                                            @elseif ($state === 'missing_dates')
+                                                <p class="badge badge-warning" title="{{ translate('Add dates or enable Run without dates to display this ad') }}">{{ translate('Hidden: missing dates') }}</p>
                                             @else
                                                 <p class="badge badge-danger">{{ translate('Inactive') }}</p>
                                             @endif

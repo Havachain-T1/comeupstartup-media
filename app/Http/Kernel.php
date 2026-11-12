@@ -86,5 +86,6 @@ class Kernel extends HttpKernel
         'demo' => DemoApp::class,
         'user.guard' => UserGuard::class,
         'admin.guard' => AdminGuard::class,
+        'company.member' => \App\Http\Middleware\EnsureCompanyMember::class,
     ];
 }

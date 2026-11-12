@@ -19,16 +19,23 @@ cp .env.example .env
 docker compose up -d --build
 docker compose exec app php artisan key:generate
 docker compose exec app php artisan jwt:secret --force
+# Apply application migrations on top of the imported SQL schema (dev + test databases):
+for db in comeupstartup comeupstartup_test; do
+  docker compose exec -e DB_DATABASE=$db app sh -c "php artisan migrate:baseline-legacy && php artisan migrate --force"
+done
 ```
+
+`migrate:baseline-legacy` marks the stock Laravel migrations that are already contained in
+`database/data.sql` as run (the dump ships with an empty `migrations` table), so `migrate`
+only executes the new application migrations.
 
 The site is served on `http://localhost:${APP_PORT:-8080}` (bound to 127.0.0.1 only, because the seed's demo accounts use the password `password`). The first `app` start runs
 `composer install` if `vendor/` is missing; the first `db` start imports the seed
 (watch `docker compose logs -f db`).
 
 Demo logins come from the sanitised seed: e.g. `admin@example.com` / `password`.
-Some admin pages (dashboard, widgets, menus, themes, plugins) are gated by the vendor
-ThemeLooks licence middleware and redirect to licence activation on an unlicensed copy.
-Leave `LICENSE_CHECKED` empty locally so the app never calls the vendor licence API.
+The vendor ThemeLooks licence verification client (`themelooks/securelooks`) has been removed;
+admin pages are protected only by authentication, the admin guard and role permissions.
 
 ## Everyday commands
 

@@ -37,13 +37,14 @@
 </head>
 
 <body class="@if ($rtl) rtl-mode @endif">
+    <a class="cus-skip-link" href="#main-content">{{ translate('Skip to content') }}</a>
 
     <!-- Preloader Start -->
     @include('theme/newslooks::frontend.includes.preloader')
     <!-- Preloader End -->
 
     <!-- Wrapper Start -->
-    <main>
+    <main id="main-content" tabindex="-1">
         <!-- Main Content Section Start -->
         @yield('content')
         <!-- Main Content Section End -->

@@ -1,0 +1,18 @@
+/* Shared UX baseline layered over the legacy theme: focus visibility, skip link, touch targets,
+   responsive embedded content and reduced motion. Kept small to avoid restyling the brand. */
+:root { --cus-focus: #2563eb; --cus-radius: 8px; }
+.cus-skip-link { position: absolute; left: 1rem; top: -100px; z-index: 100000; background: #111827; color: #fff; padding: .6rem 1rem; border-radius: var(--cus-radius); font-weight: 600; }
+.cus-skip-link:focus { top: 1rem; color: #fff; }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, [role="button"]:focus-visible {
+    outline: 3px solid var(--cus-focus); outline-offset: 2px; box-shadow: none;
+}
+.trigger-button, .close-offcanvas, .menu-trigger-btn, .submenu-button { min-width: 44px; min-height: 44px; }
+.close-offcanvas { display: inline-flex; align-items: center; justify-content: center; }
+.entry-content img, .post-details img { max-width: 100%; height: auto; }
+.entry-content table, .post-details table { display: block; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.entry-content iframe, .post-details iframe { max-width: 100%; }
+.cus-press-disclosure { border-top: 1px solid #e5e7eb; padding-top: .75rem; margin-top: 1.5rem; color: #6b7280; font-size: .9em; }
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+    .preloader { display: none !important; }
+}

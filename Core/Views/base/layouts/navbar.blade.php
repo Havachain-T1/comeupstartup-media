@@ -134,6 +134,30 @@
                 @endcanany
                 <!--End Blog module-->
                 <!-- Blog & Page End -->
+                @can('Use AI Agents')
+                    <li class="{{ Request::routeIs('admin.ai.*') ? 'active' : '' }}">
+                        <a href="{{ route('admin.ai.agents') }}">
+                            <i class="icofont-robot"></i>
+                            <span class="link-title">{{ translate('AI Agents') }}</span>
+                        </a>
+                    </li>
+                @endcan
+                @can('Manage Brand Press')
+                    <li class="{{ Request::routeIs('admin.brand-press.*') ? 'active' : '' }}">
+                        <a href="{{ route('admin.brand-press.index') }}">
+                            <i class="icofont-newspaper"></i>
+                            <span class="link-title">{{ translate('Brand Press') }}</span>
+                        </a>
+                    </li>
+                @endcan
+                @can('Manage Companies')
+                    <li class="{{ Request::routeIs('admin.companies.*') ? 'active' : '' }}">
+                        <a href="{{ route('admin.companies.index') }}">
+                            <i class="icofont-building-alt"></i>
+                            <span class="link-title">{{ translate('Companies') }}</span>
+                        </a>
+                    </li>
+                @endcan
                 <!--Ad manager-->
                 @canany(['Show Ad', 'Create Ad'])
                     <li

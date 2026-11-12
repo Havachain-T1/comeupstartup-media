@@ -10,7 +10,6 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Cache;
-use AppLoader;
 
 class PluginsController extends Controller
 {
@@ -164,28 +163,6 @@ class PluginsController extends Controller
             DB::rollBack();
             toastNotification('error', 'Plugin installation failed', 'Failed');
             return redirect()->back();
-        }
-    }
-
-    /**
-     * Verify Purchase Code
-     */
-    public function verify(Request $request)
-    {
-        try {
-
-            $plugin = Plugin::where('location', $request['plugin-location'])->first();
-            $res = AppLoader::createApp($request['purchase_key'], false, $request['license_api'], $request['plugin-location']);
-            
-            if ($plugin && $res == 'SUCCESS') {
-                toastNotification('success', translate('Purchase Key Verified Successfully'), 'Success');
-                return redirect()->route('core.plugins.index');
-            }
-            
-            return $res;
-        } catch (\Exception $e) {
-            toastNotification('error', translate('Purchase Key Verifying Failed'), 'Failed');
-            return redirect()->route('core.plugins.index');
         }
     }
 
