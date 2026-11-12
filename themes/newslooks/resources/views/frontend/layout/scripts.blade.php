@@ -138,4 +138,25 @@
 </script>
 <script src="https://vjs.zencdn.net/8.0.4/video.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/videojs-youtube/dist/Youtube.min.js"></script>
+<script>
+    window.CUS_SEARCH = {
+        endpoint: @json(route('search.suggest')),
+        minChars: {{ (int) config('search.min_query_length', 2) }},
+        debounce: 300,
+        labels: {
+            loading: @json(front_translate('Searching') . '…'),
+            empty: @json(front_translate('No results for')),
+            results: @json(front_translate('suggestions')),
+            viewAll: @json(front_translate('See all results for')),
+            articles: @json(front_translate('Articles')),
+            categories: @json(front_translate('Categories')),
+            authors: @json(front_translate('Authors')),
+            clear: @json(front_translate('Clear search')),
+            error: @json(front_translate('Search is unavailable right now. Press Enter to search.')),
+            offline: @json(front_translate('You appear to be offline.')),
+            rateLimited: @json(front_translate('Too many searches, please wait a moment.'))
+        }
+    };
+</script>
+<script src="{{ asset('public/js/search/live-search.js') }}" defer></script>
 @yield('custom-scripts')

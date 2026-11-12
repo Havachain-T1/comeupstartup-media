@@ -5,6 +5,7 @@
 <!-- ==== Font Awesome ==== -->
 <link rel="stylesheet" href="{{ asset('themes/newslooks/public/') }}/css/font-awesome.min.css ">
 <link rel="stylesheet" href="{{ asset('public/css/brand/x-brand.css') }}">
+<link rel="stylesheet" href="{{ asset('public/css/search/live-search.css') }}">
 
 <!-- Web Fonts -->
 <link rel="preconnect" href="https://fonts.gstatic.com">
