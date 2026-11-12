@@ -64,6 +64,19 @@
                             </div>
                         </div>
 
+                        <div class="form-row mb-20">
+                            <div class="col-sm-4">
+                                <label class="font-14 bold black" for="open_ended">{{ translate('Run without dates') }}</label>
+                            </div>
+                            <div class="col-sm-8">
+                                <label class="d-flex align-items-center gap-10 mb-0">
+                                    <input type="checkbox" name="open_ended" id="open_ended" value="1" @checked(old('open_ended', $ad->open_ended))>
+                                    <span class="font-14">{{ translate('Show this ad when the start or end date is left blank') }}</span>
+                                </label>
+                                <small class="text-muted d-block mt-1">{{ translate('Ads with a blank date stay hidden unless this is ticked.') }}</small>
+                            </div>
+                        </div>
+
                         <div class="form-row">
                             <div class="col-sm-4">
                                 <label class="font-14 bold black">{{ translate('Ad Type') }} </label>
