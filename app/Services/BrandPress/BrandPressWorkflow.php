@@ -205,7 +205,8 @@ class BrandPressWorkflow
             'content' => clean_press_html($body) . '<p class="cus-press-disclosure"><em>' . e($disclosure) . '</em></p>',
             'visibility' => 'public',
             'is_publish' => (int) config('settings.blog_status.publish'),
-            'publish_at' => now(),
+            // The theme only shows posts whose publish_at is strictly in the past.
+            'publish_at' => now()->subSecond(),
             'formate' => 'standard',
             'meta_title' => Str::limit($release->title, 60, ''),
             'meta_description' => Str::limit((string) $release->summary, 155, ''),
