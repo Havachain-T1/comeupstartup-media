@@ -12,6 +12,7 @@ class VerifyCsrfToken extends Middleware
      * @var array<int, string>
      */
     protected $except = [
-        //
+        // Server-to-server payment callbacks; authenticity is enforced by gateway signature checks.
+        'payments/webhook/*',
     ];
 }

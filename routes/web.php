@@ -20,3 +20,4 @@ Route::get('/search-suggest', SearchSuggestController::class)
     ->middleware('throttle:search')
     ->name('search.suggest');
 require __DIR__ . '/company.php';
+require __DIR__ . '/commerce.php';
