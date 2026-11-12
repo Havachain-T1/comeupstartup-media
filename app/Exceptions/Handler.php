@@ -30,7 +30,7 @@ class Handler extends ExceptionHandler
                 if (strpos($request->url(), '/admin') === false) {
                     $active_theme = getActiveTheme();
                     $error_page_location = 'theme/'.$active_theme->location.'::errors.404';
-                    return response()->view($error_page_location);
+                    return response()->view($error_page_location, [], 404);
                 }
             }
         }
