@@ -22,6 +22,7 @@
 @section('custom_css')
     <!--==== Font-Awesome css file ====-->
     <link rel="stylesheet" href="{{ asset('themes/newslooks/public/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/css/brand/x-brand.css') }}">
     <link rel="stylesheet" href="{{ asset('themes/newslooks/public/dist/css/fontawesome-iconpicker.min.css') }}">
     {{-- Jqueey UI CSS --}}
     <link href="{{ asset('/public/backend/assets/plugins/jquery-ui/jquery-ui.min.css') }}" rel="stylesheet">
