@@ -19,7 +19,7 @@ trait QueriesCmsStateDuringBoot
         try {
             return $query();
         } catch (QueryException | PDOException $e) {
-            if (! $this->app->runningInConsole()) {
+            if (! $this->app->runningInConsole() || $this->cachesBootState()) {
                 throw $e;
             }
 
@@ -29,5 +29,13 @@ trait QueriesCmsStateDuringBoot
 
             return $fallback;
         }
+    }
+
+    /**
+     * Cache-building commands must fail rather than persist routes/events without theme or plugin entries.
+     */
+    protected function cachesBootState(): bool
+    {
+        return in_array($_SERVER['argv'][1] ?? null, ['route:cache', 'event:cache', 'optimize'], true);
     }
 }
