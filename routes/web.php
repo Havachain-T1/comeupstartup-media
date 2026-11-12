@@ -19,3 +19,4 @@ use App\Http\Controllers\Search\SearchSuggestController;
 Route::get('/search-suggest', SearchSuggestController::class)
     ->middleware('throttle:search')
     ->name('search.suggest');
+require __DIR__ . '/company.php';
