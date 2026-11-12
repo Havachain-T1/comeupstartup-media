@@ -134,6 +134,14 @@
                 @endcanany
                 <!--End Blog module-->
                 <!-- Blog & Page End -->
+                @can('Manage Companies')
+                    <li class="{{ Request::routeIs('admin.companies.*') ? 'active' : '' }}">
+                        <a href="{{ route('admin.companies.index') }}">
+                            <i class="icofont-building-alt"></i>
+                            <span class="link-title">{{ translate('Companies') }}</span>
+                        </a>
+                    </li>
+                @endcan
                 <!--Ad manager-->
                 @canany(['Show Ad', 'Create Ad'])
                     <li

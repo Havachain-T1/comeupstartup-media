@@ -30,3 +30,10 @@ Route::middleware('auth')->prefix('companies')->name('company.')->group(function
         Route::post('/verification', [CompanyVerificationController::class, 'store'])->middleware('company.member:manage_verification')->name('verification.store');
     });
 });
+
+Route::middleware(['auth', 'admin.guard', 'can:Manage Companies'])->prefix('admin/companies')->name('admin.companies.')->group(function () {
+    Route::get('/', [\App\Http\Controllers\Admin\CompanyAdminController::class, 'index'])->name('index');
+    Route::get('/{company}', [\App\Http\Controllers\Admin\CompanyAdminController::class, 'show'])->name('show');
+    Route::post('/verifications/{verification}/review', [\App\Http\Controllers\Admin\CompanyAdminController::class, 'review'])->name('verification.review');
+    Route::get('/documents/{document}', [\App\Http\Controllers\Admin\CompanyAdminController::class, 'document'])->name('document');
+});
