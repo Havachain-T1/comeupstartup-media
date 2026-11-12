@@ -21,3 +21,4 @@ Route::get('/search-suggest', SearchSuggestController::class)
     ->name('search.suggest');
 require __DIR__ . '/company.php';
 require __DIR__ . '/commerce.php';
+require __DIR__ . '/brand_press.php';

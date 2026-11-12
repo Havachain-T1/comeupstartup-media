@@ -134,6 +134,14 @@
                 @endcanany
                 <!--End Blog module-->
                 <!-- Blog & Page End -->
+                @can('Manage Brand Press')
+                    <li class="{{ Request::routeIs('admin.brand-press.*') ? 'active' : '' }}">
+                        <a href="{{ route('admin.brand-press.index') }}">
+                            <i class="icofont-newspaper"></i>
+                            <span class="link-title">{{ translate('Brand Press') }}</span>
+                        </a>
+                    </li>
+                @endcan
                 @can('Manage Companies')
                     <li class="{{ Request::routeIs('admin.companies.*') ? 'active' : '' }}">
                         <a href="{{ route('admin.companies.index') }}">
