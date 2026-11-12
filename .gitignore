@@ -11,4 +11,12 @@ yarn-error.log
 /.idea
 /.vscode
 /themes/tlcommerce/node_modules
-/storage.env
+.env.*
+!.env.example
+*.pem
+*.key
+/storage/*.key
+/storage/debugbar/*
+/logs/*.log
+*.zip
+.DS_Store
